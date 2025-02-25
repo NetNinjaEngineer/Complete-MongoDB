@@ -115,3 +115,13 @@ db.users.insertMany([
 // memory overload and improves the performance
 // db.users.find() ===> it returns a cursor to a set of data
 
+db.users.find() // returns the first cursor with count 20 documents by default
+db.users.find().toArray() // returns all documents in the collection ==> when the first cursor
+// is received the toArray() method it will send a request to get the second cursor and so one 
+// to get all the data
+
+// forEach() ==> is a cursor with the same functionality with toArray plus it transforming the result as we need
+// it takes a callback function that transforming each document in the colletion
+db.users.find().forEach(function(user) {
+    print('user name: ' + user.name)
+})
