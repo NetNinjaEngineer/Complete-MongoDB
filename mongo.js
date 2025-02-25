@@ -135,6 +135,32 @@ db.users.find().forEach(function(user) {
 // prevents huge data processing and the application from crashing
 
 
+// BSON DataTypes (Binary Json)
+//String - Boolean - Number - ObjectId - Array - RegEx - Binary - Null - JS Code - Object - Date
+// Number ==> Int32 - Int64 - Double - Decimal
+// Date ==> ISODate - Timestamp
+
+// ISODate ==> its stores the date and the time
+// Timestamp ==> its stores the date in milliseconds
+
+// ObjectId ==> 12 byte value that combines a timestamp, machine identifier, process identifier
+// incrementing a counter to generate the objectid this combination it insures the uniqueness
+// and order the document insertion
+
+// BinData ==> its a datatype to store binary data like images, files
+
+db.users.insertOne({
+    name: 'Mohamed Ehab',
+    age: 22,
+    isAdmin: true,
+    dob: ISODate('2002-12-10'),
+    createdAt: new Timestamp(),
+    address: null,
+    gender: 'male',
+    hobbies: undefined
+})
+
+
 
 
 
