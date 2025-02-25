@@ -107,3 +107,11 @@ db.users.insertMany([
     { _id: 41, name: 'khaled', age: 22, gender: 'male', city: 'cairo', country: 'egypt' },
     { _id: 42, name: 'adel', age: 22, gender: 'male', city: 'cairo', country: 'egypt' },
 ])
+
+
+// cursor in mongo db is a pointer to a result set of the query allows to iterate
+// over the results one document at a time rather than fetching all the results
+// at one time this is usefull when dealing with a large dataset that is prevents
+// memory overload and improves the performance
+// db.users.find() ===> it returns a cursor to a set of data
+
