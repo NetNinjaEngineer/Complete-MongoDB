@@ -125,3 +125,16 @@ db.users.find().toArray() // returns all documents in the collection ==> when th
 db.users.find().forEach(function(user) {
     print('user name: ' + user.name)
 })
+
+// note ==> can not call pretty() method on the findOne() because findOne() not returns
+// a cursor findOne() returns one doument from the collection based on filter object
+
+// cursor benefits
+// it saves the network bandwidth 
+// improve performance of the application as the data is fetched in a small chunks
+// prevents huge data processing and the application from crashing
+
+
+
+
+
