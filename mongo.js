@@ -492,3 +492,28 @@ db.users.insertMany(
     ]
 
 )
+
+
+// get active users
+db.users.find({ is_active: true })
+
+// query the users collection using arrays
+// get the users lives in Turkey
+
+db.users.find({ address: 'Turkey' })
+
+// update the address for Mostafa Adel ==> set to Cairo - Egypt
+db.users.updateOne({ name: 'Mostafa Adel' }, { $set: { address: ['Cairo', 'Egypt'] } })
+
+// get all users where the product brand is apple
+db.users.find({ "purchases.brand": 'Apple' })
+
+
+// get all users documents where address array contains UK, USA, Egypt
+db.users.find({ address: { $in: ['UK', 'USA', 'Egypt'] } })
+
+// get all users documents where not in UK, USA, Egypt
+db.users.find({ address: { $nin: ['UK', 'USA', 'Egypt'] } })
+
+// get all users in Cairo, Egypt
+db.users.find({ address: { $all: ['Cairo', 'Egypt'] } })
