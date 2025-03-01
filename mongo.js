@@ -517,3 +517,19 @@ db.users.find({ address: { $nin: ['UK', 'USA', 'Egypt'] } })
 
 // get all users in Cairo, Egypt
 db.users.find({ address: { $all: ['Cairo', 'Egypt'] } })
+
+// embeded document ===> is a document is assigned to a field of another document
+// it is nested inside another document
+
+
+// get users where subscription type is monthly
+db.users.find({ "subscription_type.type": 'monthly' })
+
+// update an embeded document
+db.users.findOne({ _id: ObjectId('67c31bae1e062a24824d7953') })
+db.users.updateOne({ _id: ObjectId('67c31bae1e062a24824d7953') }, { $set: { "subscription_type.type": 'hamboozo' } })
+
+// update the renewwal_date
+db.users.updateOne(
+    { _id: ObjectId('67c31bae1e062a24824d7953') },
+    { $set: { "subscription_type.renewal_date.year": 2030 } })
