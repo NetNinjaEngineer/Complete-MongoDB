@@ -533,3 +533,10 @@ db.users.updateOne({ _id: ObjectId('67c31bae1e062a24824d7953') }, { $set: { "sub
 db.users.updateOne(
     { _id: ObjectId('67c31bae1e062a24824d7953') },
     { $set: { "subscription_type.renewal_date.year": 2030 } })
+
+// access the values of embeded document
+// get the year of subscription type for '67c31bae1e062a24824d7953'
+db.users.findOne({ _id: ObjectId('67c31bae1e062a24824d7953') }).subscription_type.renewal_date.year
+// get the purchases array of objects
+db.users.findOne({ _id: ObjectId('67c31bae1e062a24824d7953') }).purchases
+db.users.findOne({ _id: ObjectId('67c31bae1e062a24824d7953') }).address
