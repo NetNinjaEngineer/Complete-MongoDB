@@ -777,3 +777,25 @@ db.users.insertMany([
     }
 ])
 
+// One to Many Relationship
+// 1 : Few | 1 : Many | 1 : Too Many
+// for one to few relationship the most common approach is to use embeded documents
+// example ==> customer has many saved addresses (few saved addresses)
+// when to use one to few relationship we assume that the related data not be more than 5
+// and also the related data will be unique for each parent document
+
+//  1 : Many
+// for one to many relationship we assume that the related data not be more than 10 documents
+// the related data will be unique for each parent document
+
+// example order with products ==> each order have many products
+// we should not use embeding in this case because
+// 1- Related Data size ==> the size of the related data will be exceeded the overall
+// for the parent document
+// 2- Data redundency ==> many orders has the same product purchages
+// 3- Frequency of read and write ==> this data is may be updated or read more
+// in this case the referencing is more good than embeding
+
+// 1 : too many ===> use referencing
+// exmple product has many reviews
+
