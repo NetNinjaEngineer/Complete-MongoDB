@@ -540,3 +540,240 @@ db.users.findOne({ _id: ObjectId('67c31bae1e062a24824d7953') }).subscription_typ
 // get the purchases array of objects
 db.users.findOne({ _id: ObjectId('67c31bae1e062a24824d7953') }).purchases
 db.users.findOne({ _id: ObjectId('67c31bae1e062a24824d7953') }).address
+
+// to make a relationships between documents
+// 1- Embeded documents
+// 2- Referencing
+
+// First Approach (Embeded documents)
+// Advantages
+// all the information is a vailable in the same document
+// we not have to query multiple collections to get the related data
+// this is makes query faster and improve the performance
+
+// Disadvantages
+// 1- this can lead to a redundant or duplicate data in the collection
+// 2- higher network bandwidth
+// 3- the maximum size of the document is 16MB, since the all information in the same document
+// this can exceeded max length of the document
+
+// Second Approach (Referencing)
+// Advantages
+// 1- No Redundant data at all
+// 2- documents is less than 16MB
+
+
+// Disadvantags
+// 1- to fetch all data you need to query multiple collections this can lead to
+// affect the performance of the application
+
+
+
+// When to use embeded documents to represent the relationship
+// Check
+// 1- Related Data size
+// 2- Data Redundancy
+// 3- Data Growth Frequency
+// 4- Closness of the relation
+// 5- Frequency of Read / Write
+
+// When to use referencing
+
+db.users.insertMany([
+    {
+        "name": "Alice Johnson",
+        "gender": "female",
+        "date_of_birth": "15-05-1995",
+        "primary_contact": {
+            "email": "alice@example.com",
+            "phone": 9876543210
+        },
+        "address": [
+            "Los Angeles",
+            "USA"
+        ]
+    },
+    {
+        "name": "Bob Smith",
+        "gender": "male",
+        "date_of_birth": "22-11-1988",
+        "primary_contact": {
+            "email": "bobsmith@example.com",
+            "phone": 9234567890
+        },
+        "address": [
+            "London",
+            "UK"
+        ]
+    },
+    {
+        "name": "Charlie Davis",
+        "gender": "male",
+        "date_of_birth": "10-07-1992",
+        "primary_contact": {
+            "email": "charlie.davis@example.com",
+            "phone": 8765432109
+        },
+        "address": [
+            "Toronto",
+            "Canada"
+        ]
+    },
+    {
+        "name": "Diana Prince",
+        "gender": "female",
+        "date_of_birth": "25-12-1985",
+        "primary_contact": {
+            "email": "diana@example.com",
+            "phone": 9654321098
+        },
+        "address": [
+            "Paris",
+            "France"
+        ]
+    },
+    {
+        "name": "Edward Wilson",
+        "gender": "male",
+        "date_of_birth": "03-04-1990",
+        "primary_contact": {
+            "email": "edward.wilson@example.com",
+            "phone": 8123456789
+        },
+        "address": [
+            "Berlin",
+            "Germany"
+        ]
+    },
+    {
+        "name": "Fiona Green",
+        "gender": "female",
+        "date_of_birth": "17-08-1996",
+        "primary_contact": {
+            "email": "fiona@example.com",
+            "phone": 7012345678
+        },
+        "address": [
+            "Madrid",
+            "Spain"
+        ]
+    },
+    {
+        "name": "George Brown",
+        "gender": "male",
+        "date_of_birth": "09-06-1993",
+        "primary_contact": {
+            "email": "george.brown@example.com",
+            "phone": 6234567890
+        },
+        "address": [
+            "Rome",
+            "Italy"
+        ]
+    },
+    {
+        "name": "Hannah White",
+        "gender": "female",
+        "date_of_birth": "14-09-1994",
+        "primary_contact": {
+            "email": "hannah.white@example.com",
+            "phone": 5345678901
+        },
+        "address": [
+            "Tokyo",
+            "Japan"
+        ]
+    },
+    {
+        "name": "Ian Black",
+        "gender": "male",
+        "date_of_birth": "30-01-1987",
+        "primary_contact": {
+            "email": "ian.black@example.com",
+            "phone": 4123456789
+        },
+        "address": [
+            "Sydney",
+            "Australia"
+        ]
+    },
+    {
+        "name": "Jessica Adams",
+        "gender": "female",
+        "date_of_birth": "05-11-1991",
+        "primary_contact": {
+            "email": "jessica.adams@example.com",
+            "phone": 3890123456
+        },
+        "address": [
+            "Dubai",
+            "UAE"
+        ]
+    },
+    {
+        "name": "Kevin Lewis",
+        "gender": "male",
+        "date_of_birth": "28-07-1998",
+        "primary_contact": {
+            "email": "kevin.lewis@example.com",
+            "phone": 2789012345
+        },
+        "address": [
+            "Mumbai",
+            "India"
+        ]
+    },
+    {
+        "name": "Laura Scott",
+        "gender": "female",
+        "date_of_birth": "19-03-1997",
+        "primary_contact": {
+            "email": "laura.scott@example.com",
+            "phone": 1678901234
+        },
+        "address": [
+            "Singapore",
+            "Singapore"
+        ]
+    },
+    {
+        "name": "Michael Clark",
+        "gender": "male",
+        "date_of_birth": "07-12-1989",
+        "primary_contact": {
+            "email": "michael.clark@example.com",
+            "phone": 9870123456
+        },
+        "address": [
+            "Bangkok",
+            "Thailand"
+        ]
+    },
+    {
+        "name": "Nancy Hall",
+        "gender": "female",
+        "date_of_birth": "23-02-1986",
+        "primary_contact": {
+            "email": "nancy.hall@example.com",
+            "phone": 8765012345
+        },
+        "address": [
+            "Seoul",
+            "South Korea"
+        ]
+    },
+    {
+        "name": "Oscar Young",
+        "gender": "male",
+        "date_of_birth": "01-10-1990",
+        "primary_contact": {
+            "email": "oscar.young@example.com",
+            "phone": 7654321098
+        },
+        "address": [
+            "Mexico City",
+            "Mexico"
+        ]
+    }
+])
+
