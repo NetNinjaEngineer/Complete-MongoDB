@@ -799,3 +799,28 @@ db.users.insertMany([
 // 1 : too many ===> use referencing
 // exmple product has many reviews
 
+// many to many relationship ==> we always use referencing
+
+// types of referencing
+// 1- Parent Referencing
+// 2- Child Referencing
+// 3- Two way referencing
+
+
+// child referencing ==> in the parent document we storing the document id for the child document
+// problem ==> parent and child is tightly coupled 
+// we can use this approach when have 1 : few relationship
+
+
+// Parent Referencing ==> the child document is storing a reference of the parent document
+// This is good
+// the parent and child are very loosly coupled to each other
+// This is good for 1: Many or 1 : too many relationships
+
+// Two way referencing (used with many to many relationship)
+// The parent document is storing a reference of the child documents
+// and the child document is storinf a reference of parent documents
+
+
+
+
