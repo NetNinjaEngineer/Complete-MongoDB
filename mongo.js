@@ -1652,7 +1652,7 @@ db.users.insertOne({
         country: 'Egypt'
     },
     gender: 'male'
-}) 
+})
 
 
 //additional field
@@ -1666,4 +1666,53 @@ db.users.insertOne({
     },
     gender: 'male',
     age: 22
-}) 
+})
+
+//valid user document
+db.users.insertOne({
+    name: 'Ali Ehab',
+    email: 'ali@gmail.com',
+    address: {
+        street: '123 some street',
+        city: 'Ashmoon',
+        country: 'Egypt'
+    },
+    gender: 'male'
+})
+
+// Modifying existing schema
+
+db.runCommand({
+    collMod: 'users',
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            required: ['name', 'email', 'address'],
+            properties: {
+                _id: { bsonType: 'objectId' },
+                name: {
+                    bsonType: 'string',
+                    description: 'Name is a required text field'
+                },
+                email: {
+                    bsonType: 'string',
+                    description: 'Email is a required text field'
+                },
+                address: {
+                    bsonType: 'object',
+                    description: 'address is a required field',
+                    properties: {
+                        street: { bsonType: 'string' },
+                        city: { bsonType: 'string' },
+                        country: { bsonType: 'string' }
+                    }
+                },
+                gender: {
+                    bsonType: 'string'
+                }
+            },
+            additionalProperties: false
+        }
+    }
+})
+
