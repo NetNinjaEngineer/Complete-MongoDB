@@ -1552,3 +1552,118 @@ db.orders.aggregate([
 //       as: "<output_array_name>"
 //     }
 //   }
+
+
+// Schema ==> structured framework or a plan, Its a way to organize and
+// interpret the information Whether its a data in the database
+// or concepts in our minds or structure of a document
+
+
+// Defining the schema and schema validation
+
+db.createCollection('users', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            required: ['name', 'email', 'address'],
+            properties: {
+                name: {
+                    bsonType: 'string',
+                    description: 'Name is a required text field'
+                },
+                email: {
+                    bsonType: 'string',
+                    description: 'Email is a required text field'
+                },
+                address: {
+                    bsonType: 'object',
+                    description: 'address is a required field',
+                    properties: {
+                        street: { bsonType: 'string' },
+                        city: { bsonType: 'string' },
+                        country: { bsonType: 'string' }
+                    }
+                },
+                gender: {
+                    bsonType: 'string'
+                }
+            }
+        }
+    }
+})
+
+// To insure that no additional properties have been added into the collection
+// define additionalProperties: false in the collection schema
+
+
+db.createCollection('users', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            required: ['name', 'email', 'address'],
+            properties: {
+                name: {
+                    bsonType: 'string',
+                    description: 'Name is a required text field'
+                },
+                email: {
+                    bsonType: 'string',
+                    description: 'Email is a required text field'
+                },
+                address: {
+                    bsonType: 'object',
+                    description: 'address is a required field',
+                    properties: {
+                        street: { bsonType: 'string' },
+                        city: { bsonType: 'string' },
+                        country: { bsonType: 'string' }
+                    }
+                },
+                gender: {
+                    bsonType: 'string'
+                }
+            },
+            additionalProperties: false
+        }
+    }
+})
+
+
+
+db.users.insertOne({ name: 'Mohamed Ehab', email: 'mohamed@gmail.com' }) // this is throws a mongodb error
+// Missing the required address field
+
+db.users.insertOne({
+    name: 'Mohamed Ehab',
+    email: 'mohamed@gmail.com',
+    address: {
+        street: '123 some street',
+        city: 'Ashmoon',
+        country: 'Egypt'
+    }
+})
+
+db.users.insertOne({
+    name: 'Mohamed Ehab',
+    email: 'mohamed@gmail.com',
+    address: {
+        street: '123 some street',
+        city: 'Ashmoon',
+        country: 'Egypt'
+    },
+    gender: 'male'
+}) 
+
+
+//additional field
+db.users.insertOne({
+    name: 'Mohamed Ehab',
+    email: 'mohamed@gmail.com',
+    address: {
+        street: '123 some street',
+        city: 'Ashmoon',
+        country: 'Egypt'
+    },
+    gender: 'male',
+    age: 22
+}) 
