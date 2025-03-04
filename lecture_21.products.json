@@ -1,0 +1,502 @@
+[
+    {
+        "name": "iPhone 15 Pro Max",
+        "brand": "Apple",
+        "price": 1299,
+        "details": {
+            "model": "A2993",
+            "color": "Space Black",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Samsung Galaxy S24 Ultra",
+        "brand": "Samsung",
+        "price": 1199,
+        "details": {
+            "model": "SM-S928U",
+            "color": "Titanium Gray",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Google Pixel 8 Pro",
+        "brand": "Google",
+        "price": 999,
+        "details": {
+            "model": "G6GPR",
+            "color": "Obsidian",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "OnePlus 12",
+        "brand": "OnePlus",
+        "price": 799,
+        "details": {
+            "model": "LE2300",
+            "color": "Silky Black",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Xiaomi 14 Pro",
+        "brand": "Xiaomi",
+        "price": 899,
+        "details": {
+            "model": "23127PN0CC",
+            "color": "White Marble",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Huawei P60 Pro",
+        "brand": "Huawei",
+        "price": 1099,
+        "details": {
+            "model": "VOG-AL60",
+            "color": "Emerald Green",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Sony Xperia 1 V",
+        "brand": "Sony",
+        "price": 1299,
+        "details": {
+            "model": "XQ-DQ72",
+            "color": "Black",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Oppo Find X7 Ultra",
+        "brand": "Oppo",
+        "price": 999,
+        "details": {
+            "model": "PHZ110",
+            "color": "Ocean Blue",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Vivo X100 Pro",
+        "brand": "Vivo",
+        "price": 899,
+        "details": {
+            "model": "V2333A",
+            "color": "Sunset Orange",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Nokia 9.4 PureView",
+        "brand": "Nokia",
+        "price": 799,
+        "details": {
+            "model": "TA-1296",
+            "color": "Midnight Blue",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "LG Velvet 3",
+        "brand": "LG",
+        "price": 699,
+        "details": {
+            "model": "LM-G915",
+            "color": "Aurora Gray",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Motorola Edge 50 Ultra",
+        "brand": "Motorola",
+        "price": 749,
+        "details": {
+            "model": "XT2401-2",
+            "color": "Peach Fuzz",
+            "release_year": 2025
+        }
+    },
+    {
+        "name": "Realme GT 6",
+        "brand": "Realme",
+        "price": 599,
+        "details": {
+            "model": "RMX3830",
+            "color": "Silver",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Asus ROG Phone 8",
+        "brand": "Asus",
+        "price": 1099,
+        "details": {
+            "model": "ZS590KS",
+            "color": "Phantom Black",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "ZTE Axon 60 Ultra",
+        "brand": "ZTE",
+        "price": 799,
+        "details": {
+            "model": "A2322",
+            "color": "Cosmic Silver",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "iPhone 14 Pro",
+        "brand": "Apple",
+        "price": 1099,
+        "details": {
+            "model": "A2881",
+            "color": "Deep Purple",
+            "release_year": 2022
+        }
+    },
+    {
+        "name": "Samsung Galaxy Z Fold 5",
+        "brand": "Samsung",
+        "price": 1799,
+        "details": {
+            "model": "SM-F946U",
+            "color": "Cream",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Google Pixel 7 Pro",
+        "brand": "Google",
+        "price": 899,
+        "details": {
+            "model": "GP4BC",
+            "color": "Coral",
+            "release_year": 2022
+        }
+    },
+    {
+        "name": "OnePlus 11",
+        "brand": "OnePlus",
+        "price": 699,
+        "details": {
+            "model": "LE2125",
+            "color": "Emerald Forest",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Xiaomi 13 Pro",
+        "brand": "Xiaomi",
+        "price": 799,
+        "details": {
+            "model": "2210132G",
+            "color": "Ceramic White",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Huawei Mate 60 Pro",
+        "brand": "Huawei",
+        "price": 1199,
+        "details": {
+            "model": "ALP-AL80",
+            "color": "Black",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Sony Xperia 5 V",
+        "brand": "Sony",
+        "price": 999,
+        "details": {
+            "model": "XQ-DQ54",
+            "color": "Green",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Oppo Find N3",
+        "brand": "Oppo",
+        "price": 1699,
+        "details": {
+            "model": "CPH2437",
+            "color": "Gold",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Vivo X90 Pro",
+        "brand": "Vivo",
+        "price": 849,
+        "details": {
+            "model": "V2227A",
+            "color": "Red",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Nokia X30",
+        "brand": "Nokia",
+        "price": 599,
+        "details": {
+            "model": "TA-1412",
+            "color": "Ocean Blue",
+            "release_year": 2022
+        }
+    },
+    {
+        "name": "LG Wing 2",
+        "brand": "LG",
+        "price": 799,
+        "details": {
+            "model": "LM-F200",
+            "color": "Illusion Sky",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Motorola Razr 40 Ultra",
+        "brand": "Motorola",
+        "price": 999,
+        "details": {
+            "model": "XT2305-1",
+            "color": "Viva Magenta",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Realme Narzo 60 Pro",
+        "brand": "Realme",
+        "price": 499,
+        "details": {
+            "model": "RMX3750",
+            "color": "Cosmic Black",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Asus Zenfone 10",
+        "brand": "Asus",
+        "price": 699,
+        "details": {
+            "model": "AI2201",
+            "color": "Midnight Black",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "ZTE Nubia Z60 Ultra",
+        "brand": "ZTE",
+        "price": 749,
+        "details": {
+            "model": "NX729J",
+            "color": "Black Gold",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "iPhone 16 Pro",
+        "brand": "Apple",
+        "price": 1399,
+        "details": {
+            "model": "A3104",
+            "color": "Titanium Blue",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Samsung Galaxy A55",
+        "brand": "Samsung",
+        "price": 449,
+        "details": {
+            "model": "SM-A556U",
+            "color": "Awesome Lilac",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Google Pixel 9",
+        "brand": "Google",
+        "price": 799,
+        "details": {
+            "model": "GYZ8X",
+            "color": "Porcelain",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "OnePlus Nord 4",
+        "brand": "OnePlus",
+        "price": 499,
+        "details": {
+            "model": "DN2401",
+            "color": "Mercurial Silver",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Xiaomi Redmi Note 13 Pro",
+        "brand": "Xiaomi",
+        "price": 399,
+        "details": {
+            "model": "2312DRA50G",
+            "color": "Arctic White",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Huawei Nova 12 Pro",
+        "brand": "Huawei",
+        "price": 599,
+        "details": {
+            "model": "NOA-AL50",
+            "color": "Sakura Pink",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Sony Xperia 10 V",
+        "brand": "Sony",
+        "price": 499,
+        "details": {
+            "model": "XQ-DC72",
+            "color": "Mint",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Oppo Reno 11 Pro",
+        "brand": "Oppo",
+        "price": 649,
+        "details": {
+            "model": "PHQ110",
+            "color": "Sunrise Gold",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Vivo Y100",
+        "brand": "Vivo",
+        "price": 299,
+        "details": {
+            "model": "V2309",
+            "color": "Metallic Blue",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Nokia G60",
+        "brand": "Nokia",
+        "price": 349,
+        "details": {
+            "model": "TA-1477",
+            "color": "Ice Gray",
+            "release_year": 2022
+        }
+    },
+    {
+        "name": "LG G8X ThinQ",
+        "brand": "LG",
+        "price": 599,
+        "details": {
+            "model": "LM-G850",
+            "color": "Aurora Black",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Motorola Moto G Power 5G",
+        "brand": "Motorola",
+        "price": 199,
+        "details": {
+            "model": "XT2315-1",
+            "color": "Mineral Black",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Realme C65",
+        "brand": "Realme",
+        "price": 199,
+        "details": {
+            "model": "RMX3841",
+            "color": "Glowing Green",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Asus Zenfone 9",
+        "brand": "Asus",
+        "price": 599,
+        "details": {
+            "model": "AI2202",
+            "color": "Starry White",
+            "release_year": 2022
+        }
+    },
+    {
+        "name": "ZTE Blade V50",
+        "brand": "ZTE",
+        "price": 249,
+        "details": {
+            "model": "V2024A",
+            "color": "Gradient Purple",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "iPhone SE (3rd Gen)",
+        "brand": "Apple",
+        "price": 429,
+        "details": {
+            "model": "A2783",
+            "color": "Midnight",
+            "release_year": 2022
+        }
+    },
+    {
+        "name": "Samsung Galaxy S23",
+        "brand": "Samsung",
+        "price": 799,
+        "details": {
+            "model": "SM-S911U",
+            "color": "Phantom Black",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Google Pixel 6a",
+        "brand": "Google",
+        "price": 449,
+        "details": {
+            "model": "GA02098",
+            "color": "Sage",
+            "release_year": 2022
+        }
+    },
+    {
+        "name": "OnePlus Ace 3",
+        "brand": "OnePlus",
+        "price": 599,
+        "details": {
+            "model": "PHB110",
+            "color": "Jade Green",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Xiaomi 12T Pro",
+        "brand": "Xiaomi",
+        "price": 649,
+        "details": {
+            "model": "2201122G",
+            "color": "Silver",
+            "release_year": 2022
+        }
+    }
+]

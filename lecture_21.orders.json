@@ -1,0 +1,192 @@
+[
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb1d'),
+        "user_id": ObjectId('67c412483b8bf2f9854d7942'),
+        "products": [
+        ObjectId('673b5f9471bf64a76286bb1f'),
+        ObjectId('673b5f9471bf64a76286bb20')
+        ],
+        "order_date": {
+            "$date": "2024-05-12T10:30:00Z"
+        },
+        "total_amount": 2298,
+        "status": "delivered"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb21'),
+        "user_id": ObjectId('67c412483b8bf2f9854d7943'),
+        "products": [
+        ObjectId('673b5f9471bf64a76286bb23')
+        ],
+        "order_date": {
+            "$date": "2024-08-15T14:20:00Z"
+        },
+        "total_amount": 1199,
+        "status": "shipped"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb24'),
+        "user_id": ObjectId('67c412483b8bf2f9854d7944'),
+        "products": [
+        ObjectId('673b5f9471bf64a76286bb26'),
+        ObjectId('673b5f9471bf64a76286bb27')
+        ],
+        "order_date": {
+            "$date": "2024-03-20T09:15:00Z"
+        },
+        "total_amount": 1698,
+        "status": "delivered"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb28'),
+        "user_id": ObjectId('67c412483b8bf2f9854d7945'),
+        "products": [
+        ObjectId('673b5f9471bf64a76286bb2a')
+        ],
+        "order_date": {
+            "$date": "2024-11-10T16:45:00Z"
+        },
+        "total_amount": 1099,
+        "status": "processing"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb2b'),
+        "user_id": ObjectId('67c412483b8bf2f9854d7946'),
+        "products": [
+        ObjectId('673b5f9471bf64a76286bb2d'),
+        ObjectId('673b5f9471bf64a76286bb2e')
+        ],
+        "order_date": {
+            "$date": "2025-01-25T12:00:00Z"
+        },
+        "total_amount": 2298,
+        "status": "delivered"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb2f'),
+        "user_id": ObjectId('67c412483b8bf2f9854d7947'),
+        "products": [
+        ObjectId('673b5f9471bf64a76286bb31'),
+        ObjectId('673b5f9471bf64a76286bb32')
+        ],
+        "order_date": {
+            "$date": "2024-07-18T15:10:00Z"
+        },
+        "total_amount": 1698,
+        "status": "shipped"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb33'),
+        "user_id": ObjectId('67c412483b8bf2f9854d7948'),
+        "products": [
+        ObjectId('673b5f9471bf64a76286bb35')
+        ],
+        "order_date": {
+            "$date": "2024-09-05T11:25:00Z"
+        },
+        "total_amount": 699,
+        "status": "delivered"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb36'),
+        "user_id": ObjectId('67c412483b8bf2f9854d7949'),
+        "products": [
+        ObjectId('673b5f9471bf64a76286bb38'),
+        ObjectId('673b5f9471bf64a76286bb39')
+        ],
+        "order_date": {
+            "$date": "2025-02-10T09:00:00Z"
+        },
+        "total_amount": 1348,
+        "status": "processing"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb3a'),
+        "user_id": ObjectId('67c412483b8bf2f9854d794a'),
+        "products": [
+        ObjectId('673b5f9471bf64a76286bb3c')
+        ],
+        "order_date": {
+            "$date": "2024-06-22T13:45:00Z"
+        },
+        "total_amount": 1099,
+        "status": "delivered"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb3d'),
+        "user_id": ObjectId('67c412483b8bf2f9854d794b'),
+        "products": [
+        ObjectId('673b5f9471bf64a76286bb3f'),
+        ObjectId('673b5f9471bf64a76286bb40')
+        ],
+        "order_date": {
+            "$date": "2024-12-01T14:30:00Z"
+        },
+        "total_amount": 1898,
+        "status": "shipped"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb41'),
+        "user_id": ObjectId('67c412483b8bf2f9854d794c'),
+        "products": [
+        ObjectId('673b5f9471bf64a76286bb43')
+        ],
+        "order_date": {
+            "$date": "2024-04-15T10:00:00Z"
+        },
+        "total_amount": 1799,
+        "status": "delivered"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb44'),
+        "user_id": ObjectId('67c412483b8bf2f9854d794d'),
+        "products": [
+        ObjectId('673b5f9471bf64a76286bb46'),
+        ObjectId('673b5f9471bf64a76286bb47')
+        ],
+        "order_date": {
+            "$date": "2025-03-02T11:15:00Z"
+        },
+        "total_amount": 1598,
+        "status": "processing"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb48'),
+        "user_id": ObjectId('67c412483b8bf2f9854d794e'),
+        "products": [
+        ObjectId('673b5f9471bf64a76286bb4a'),
+        ObjectId('673b5f9471bf64a76286bb4b')
+        ],
+        "order_date": {
+            "$date": "2024-10-20T16:00:00Z"
+        },
+        "total_amount": 1998,
+        "status": "shipped"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb4c'),
+        "user_id": ObjectId('67c412483b8bf2f9854d794f'),
+        "products": [
+        ObjectId('673b5f9471bf64a76286bb4e')
+        ],
+        "order_date": {
+            "$date": "2024-02-28T09:30:00Z"
+        },
+        "total_amount": 999,
+        "status": "delivered"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb4f'),
+        "user_id": ObjectId('67c412483b8bf2f9854d7950'),
+        "products": [
+        ObjectId('673b5f9471bf64a76286bb51'),
+        ObjectId('673b5f9471bf64a76286bb52'),
+        ObjectId('673b5f9471bf64a76286bb53')
+        ],
+        "order_date": {
+            "$date": "2025-03-01T13:20:00Z"
+        },
+        "total_amount": 3147,
+        "status": "processing"
+    }
+]

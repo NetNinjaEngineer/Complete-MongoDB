@@ -821,6 +821,734 @@ db.users.insertMany([
 // The parent document is storing a reference of the child documents
 // and the child document is storinf a reference of parent documents
 
+db.products.insertMany([
+    {
+        "name": "iPhone 15 Pro Max",
+        "brand": "Apple",
+        "price": 1299,
+        "details": {
+            "model": "A2993",
+            "color": "Space Black",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Samsung Galaxy S24 Ultra",
+        "brand": "Samsung",
+        "price": 1199,
+        "details": {
+            "model": "SM-S928U",
+            "color": "Titanium Gray",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Google Pixel 8 Pro",
+        "brand": "Google",
+        "price": 999,
+        "details": {
+            "model": "G6GPR",
+            "color": "Obsidian",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "OnePlus 12",
+        "brand": "OnePlus",
+        "price": 799,
+        "details": {
+            "model": "LE2300",
+            "color": "Silky Black",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Xiaomi 14 Pro",
+        "brand": "Xiaomi",
+        "price": 899,
+        "details": {
+            "model": "23127PN0CC",
+            "color": "White Marble",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Huawei P60 Pro",
+        "brand": "Huawei",
+        "price": 1099,
+        "details": {
+            "model": "VOG-AL60",
+            "color": "Emerald Green",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Sony Xperia 1 V",
+        "brand": "Sony",
+        "price": 1299,
+        "details": {
+            "model": "XQ-DQ72",
+            "color": "Black",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Oppo Find X7 Ultra",
+        "brand": "Oppo",
+        "price": 999,
+        "details": {
+            "model": "PHZ110",
+            "color": "Ocean Blue",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Vivo X100 Pro",
+        "brand": "Vivo",
+        "price": 899,
+        "details": {
+            "model": "V2333A",
+            "color": "Sunset Orange",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Nokia 9.4 PureView",
+        "brand": "Nokia",
+        "price": 799,
+        "details": {
+            "model": "TA-1296",
+            "color": "Midnight Blue",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "LG Velvet 3",
+        "brand": "LG",
+        "price": 699,
+        "details": {
+            "model": "LM-G915",
+            "color": "Aurora Gray",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Motorola Edge 50 Ultra",
+        "brand": "Motorola",
+        "price": 749,
+        "details": {
+            "model": "XT2401-2",
+            "color": "Peach Fuzz",
+            "release_year": 2025
+        }
+    },
+    {
+        "name": "Realme GT 6",
+        "brand": "Realme",
+        "price": 599,
+        "details": {
+            "model": "RMX3830",
+            "color": "Silver",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Asus ROG Phone 8",
+        "brand": "Asus",
+        "price": 1099,
+        "details": {
+            "model": "ZS590KS",
+            "color": "Phantom Black",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "ZTE Axon 60 Ultra",
+        "brand": "ZTE",
+        "price": 799,
+        "details": {
+            "model": "A2322",
+            "color": "Cosmic Silver",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "iPhone 14 Pro",
+        "brand": "Apple",
+        "price": 1099,
+        "details": {
+            "model": "A2881",
+            "color": "Deep Purple",
+            "release_year": 2022
+        }
+    },
+    {
+        "name": "Samsung Galaxy Z Fold 5",
+        "brand": "Samsung",
+        "price": 1799,
+        "details": {
+            "model": "SM-F946U",
+            "color": "Cream",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Google Pixel 7 Pro",
+        "brand": "Google",
+        "price": 899,
+        "details": {
+            "model": "GP4BC",
+            "color": "Coral",
+            "release_year": 2022
+        }
+    },
+    {
+        "name": "OnePlus 11",
+        "brand": "OnePlus",
+        "price": 699,
+        "details": {
+            "model": "LE2125",
+            "color": "Emerald Forest",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Xiaomi 13 Pro",
+        "brand": "Xiaomi",
+        "price": 799,
+        "details": {
+            "model": "2210132G",
+            "color": "Ceramic White",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Huawei Mate 60 Pro",
+        "brand": "Huawei",
+        "price": 1199,
+        "details": {
+            "model": "ALP-AL80",
+            "color": "Black",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Sony Xperia 5 V",
+        "brand": "Sony",
+        "price": 999,
+        "details": {
+            "model": "XQ-DQ54",
+            "color": "Green",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Oppo Find N3",
+        "brand": "Oppo",
+        "price": 1699,
+        "details": {
+            "model": "CPH2437",
+            "color": "Gold",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Vivo X90 Pro",
+        "brand": "Vivo",
+        "price": 849,
+        "details": {
+            "model": "V2227A",
+            "color": "Red",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Nokia X30",
+        "brand": "Nokia",
+        "price": 599,
+        "details": {
+            "model": "TA-1412",
+            "color": "Ocean Blue",
+            "release_year": 2022
+        }
+    },
+    {
+        "name": "LG Wing 2",
+        "brand": "LG",
+        "price": 799,
+        "details": {
+            "model": "LM-F200",
+            "color": "Illusion Sky",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Motorola Razr 40 Ultra",
+        "brand": "Motorola",
+        "price": 999,
+        "details": {
+            "model": "XT2305-1",
+            "color": "Viva Magenta",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Realme Narzo 60 Pro",
+        "brand": "Realme",
+        "price": 499,
+        "details": {
+            "model": "RMX3750",
+            "color": "Cosmic Black",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Asus Zenfone 10",
+        "brand": "Asus",
+        "price": 699,
+        "details": {
+            "model": "AI2201",
+            "color": "Midnight Black",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "ZTE Nubia Z60 Ultra",
+        "brand": "ZTE",
+        "price": 749,
+        "details": {
+            "model": "NX729J",
+            "color": "Black Gold",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "iPhone 16 Pro",
+        "brand": "Apple",
+        "price": 1399,
+        "details": {
+            "model": "A3104",
+            "color": "Titanium Blue",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Samsung Galaxy A55",
+        "brand": "Samsung",
+        "price": 449,
+        "details": {
+            "model": "SM-A556U",
+            "color": "Awesome Lilac",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Google Pixel 9",
+        "brand": "Google",
+        "price": 799,
+        "details": {
+            "model": "GYZ8X",
+            "color": "Porcelain",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "OnePlus Nord 4",
+        "brand": "OnePlus",
+        "price": 499,
+        "details": {
+            "model": "DN2401",
+            "color": "Mercurial Silver",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Xiaomi Redmi Note 13 Pro",
+        "brand": "Xiaomi",
+        "price": 399,
+        "details": {
+            "model": "2312DRA50G",
+            "color": "Arctic White",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Huawei Nova 12 Pro",
+        "brand": "Huawei",
+        "price": 599,
+        "details": {
+            "model": "NOA-AL50",
+            "color": "Sakura Pink",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Sony Xperia 10 V",
+        "brand": "Sony",
+        "price": 499,
+        "details": {
+            "model": "XQ-DC72",
+            "color": "Mint",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Oppo Reno 11 Pro",
+        "brand": "Oppo",
+        "price": 649,
+        "details": {
+            "model": "PHQ110",
+            "color": "Sunrise Gold",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Vivo Y100",
+        "brand": "Vivo",
+        "price": 299,
+        "details": {
+            "model": "V2309",
+            "color": "Metallic Blue",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Nokia G60",
+        "brand": "Nokia",
+        "price": 349,
+        "details": {
+            "model": "TA-1477",
+            "color": "Ice Gray",
+            "release_year": 2022
+        }
+    },
+    {
+        "name": "LG G8X ThinQ",
+        "brand": "LG",
+        "price": 599,
+        "details": {
+            "model": "LM-G850",
+            "color": "Aurora Black",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Motorola Moto G Power 5G",
+        "brand": "Motorola",
+        "price": 199,
+        "details": {
+            "model": "XT2315-1",
+            "color": "Mineral Black",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Realme C65",
+        "brand": "Realme",
+        "price": 199,
+        "details": {
+            "model": "RMX3841",
+            "color": "Glowing Green",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Asus Zenfone 9",
+        "brand": "Asus",
+        "price": 599,
+        "details": {
+            "model": "AI2202",
+            "color": "Starry White",
+            "release_year": 2022
+        }
+    },
+    {
+        "name": "ZTE Blade V50",
+        "brand": "ZTE",
+        "price": 249,
+        "details": {
+            "model": "V2024A",
+            "color": "Gradient Purple",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "iPhone SE (3rd Gen)",
+        "brand": "Apple",
+        "price": 429,
+        "details": {
+            "model": "A2783",
+            "color": "Midnight",
+            "release_year": 2022
+        }
+    },
+    {
+        "name": "Samsung Galaxy S23",
+        "brand": "Samsung",
+        "price": 799,
+        "details": {
+            "model": "SM-S911U",
+            "color": "Phantom Black",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Google Pixel 6a",
+        "brand": "Google",
+        "price": 449,
+        "details": {
+            "model": "GA02098",
+            "color": "Sage",
+            "release_year": 2022
+        }
+    },
+    {
+        "name": "OnePlus Ace 3",
+        "brand": "OnePlus",
+        "price": 599,
+        "details": {
+            "model": "PHB110",
+            "color": "Jade Green",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Xiaomi 12T Pro",
+        "brand": "Xiaomi",
+        "price": 649,
+        "details": {
+            "model": "2201122G",
+            "color": "Silver",
+            "release_year": 2022
+        }
+    }
+])
+
+db.orders.insertMany([
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb1d'),
+        "user_id": ObjectId('67c412483b8bf2f9854d7942'),
+        "products": [
+            ObjectId('673b5f9471bf64a76286bb1f'),
+            ObjectId('673b5f9471bf64a76286bb20')
+        ],
+        "order_date": { "$date": "2024-05-12T10:30:00Z" },
+        "total_amount": 2298,
+        "status": "delivered"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb21'),
+        "user_id": ObjectId('67c412483b8bf2f9854d7943'),
+        "products": [
+            ObjectId('673b5f9471bf64a76286bb23')
+        ],
+        "order_date": { "$date": "2024-08-15T14:20:00Z" },
+        "total_amount": 1199,
+        "status": "shipped"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb24'),
+        "user_id": ObjectId('67c412483b8bf2f9854d7944'),
+        "products": [
+            ObjectId('673b5f9471bf64a76286bb26'),
+            ObjectId('673b5f9471bf64a76286bb27')
+        ],
+        "order_date": { "$date": "2024-03-20T09:15:00Z" },
+        "total_amount": 1698,
+        "status": "delivered"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb28'),
+        "user_id": ObjectId('67c412483b8bf2f9854d7945'),
+        "products": [
+            ObjectId('673b5f9471bf64a76286bb2a')
+        ],
+        "order_date": { "$date": "2024-11-10T16:45:00Z" },
+        "total_amount": 1099,
+        "status": "processing"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb2b'),
+        "user_id": ObjectId('67c412483b8bf2f9854d7946'),
+        "products": [
+            ObjectId('673b5f9471bf64a76286bb2d'),
+            ObjectId('673b5f9471bf64a76286bb2e')
+        ],
+        "order_date": { "$date": "2025-01-25T12:00:00Z" },
+        "total_amount": 2298,
+        "status": "delivered"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb2f'),
+        "user_id": ObjectId('67c412483b8bf2f9854d7947'),
+        "products": [
+            ObjectId('673b5f9471bf64a76286bb31'),
+            ObjectId('673b5f9471bf64a76286bb32')
+        ],
+        "order_date": { "$date": "2024-07-18T15:10:00Z" },
+        "total_amount": 1698,
+        "status": "shipped"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb33'),
+        "user_id": ObjectId('67c412483b8bf2f9854d7948'),
+        "products": [
+            ObjectId('673b5f9471bf64a76286bb35')
+        ],
+        "order_date": { "$date": "2024-09-05T11:25:00Z" },
+        "total_amount": 699,
+        "status": "delivered"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb36'),
+        "user_id": ObjectId('67c412483b8bf2f9854d7949'),
+        "products": [
+            ObjectId('673b5f9471bf64a76286bb38'),
+            ObjectId('673b5f9471bf64a76286bb39')
+        ],
+        "order_date": { "$date": "2025-02-10T09:00:00Z" },
+        "total_amount": 1348,
+        "status": "processing"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb3a'),
+        "user_id": ObjectId('67c412483b8bf2f9854d794a'),
+        "products": [
+            ObjectId('673b5f9471bf64a76286bb3c')
+        ],
+        "order_date": { "$date": "2024-06-22T13:45:00Z" },
+        "total_amount": 1099,
+        "status": "delivered"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb3d'),
+        "user_id": ObjectId('67c412483b8bf2f9854d794b'),
+        "products": [
+            ObjectId('673b5f9471bf64a76286bb3f'),
+            ObjectId('673b5f9471bf64a76286bb40')
+        ],
+        "order_date": { "$date": "2024-12-01T14:30:00Z" },
+        "total_amount": 1898,
+        "status": "shipped"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb41'),
+        "user_id": ObjectId('67c412483b8bf2f9854d794c'),
+        "products": [
+            ObjectId('673b5f9471bf64a76286bb43')
+        ],
+        "order_date": { "$date": "2024-04-15T10:00:00Z" },
+        "total_amount": 1799,
+        "status": "delivered"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb44'),
+        "user_id": ObjectId('67c412483b8bf2f9854d794d'),
+        "products": [
+            ObjectId('673b5f9471bf64a76286bb46'),
+            ObjectId('673b5f9471bf64a76286bb47')
+        ],
+        "order_date": { "$date": "2025-03-02T11:15:00Z" },
+        "total_amount": 1598,
+        "status": "processing"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb48'),
+        "user_id": ObjectId('67c412483b8bf2f9854d794e'),
+        "products": [
+            ObjectId('673b5f9471bf64a76286bb4a'),
+            ObjectId('673b5f9471bf64a76286bb4b')
+        ],
+        "order_date": { "$date": "2024-10-20T16:00:00Z" },
+        "total_amount": 1998,
+        "status": "shipped"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb4c'),
+        "user_id": ObjectId('67c412483b8bf2f9854d794f'),
+        "products": [
+            ObjectId('673b5f9471bf64a76286bb4e')
+        ],
+        "order_date": { "$date": "2024-02-28T09:30:00Z" },
+        "total_amount": 999,
+        "status": "delivered"
+    },
+    {
+        "_id": ObjectId('673b5f9471bf64a76286bb4f'),
+        "user_id": ObjectId('67c412483b8bf2f9854d7950'),
+        "products": [
+            ObjectId('673b5f9471bf64a76286bb51'),
+            ObjectId('673b5f9471bf64a76286bb52'),
+            ObjectId('673b5f9471bf64a76286bb53')
+        ],
+        "order_date": { "$date": "2025-03-01T13:20:00Z" },
+        "total_amount": 3147,
+        "status": "processing"
+    }
+])
+
+// get the first order
+db.orders.findOne({})
+
+// get the order ObjectId('673b5f9471bf64a76286bb1d')
+db.orders.findOne({ _id: ObjectId('673b5f9471bf64a76286bb1d') })
+
+// to get the related data form multiple collections
+// using the aggregate (lookup) like joining tables in sql
+
+db.orders.aggregate({
+    $lookup: {
+        from: 'users',
+        localField: 'user_id',
+        foreignField: '_id',
+        as: 'customer_info'
+    }
+})
+
+
+db.orders.aggregate([
+    {
+        $lookup: {
+            from: 'users',
+            localField: 'user_id',
+            foreignField: '_id',
+            as: 'customer_info'
+        }
+    },
+    {
+        $lookup: {
+            from: "products",
+            localField: "products",
+            foreignField: "_id",
+            as: "product_details"
+        }
+    }
+])
 
 
 
+
+// MongoDB is designed for flexibility and scalability, storing data in BSON (Binary JSON) documents
+//  within collections. Unlike relational databases, MongoDB does not enforce strict relationships or
+//   foreign keys, but you can establish relationships between collections through references
+//    (e.g., using ObjectId values). To "join" data, you typically use the aggregation framework,
+//     which allows you to process and combine data from multiple collections.
+
+// The most common way to perform joins in MongoDB is with the $lookup operator, which performs
+//  a left outer join between two collections. This is similar to a LEFT JOIN in SQL, 
+//  where all documents from the "from" collection are returned, 
+//  and matching documents from the "local" collection are included.
+
+
+// The $lookup stage in the MongoDB aggregation pipeline allows you to join two 
+// collections based on a common field (e.g., an ObjectId reference).
+//  Here’s a breakdown of its components:
+
+// {
+//     $lookup: {
+//       from: "<collection_to_join>",
+//       localField: "<field_from_the_input_documents>",
+//       foreignField: "<field_from_the_target_collection>",
+//       as: "<output_array_name>"
+//     }
+//   }
