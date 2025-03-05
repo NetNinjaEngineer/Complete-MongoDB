@@ -1763,3 +1763,73 @@ db.createCollection('users', {
 })
 
 db.runCommand({ collMod: 'users', validationLevel: 'strict', validationAction: 'error' })
+
+// ordered insertion
+// If the document has a problem with the insertion it throws an error
+// while inserting and if there exists any document after this document
+// it not be inserted by default
+// we can configure the default behavoir like this:
+
+// insertion will be good
+db.countries.insertMany([
+    { _id: 'EG', name: 'egypt' },
+    { _id: 'FR', name: 'france' },
+    { _id: 'PK', name: 'pakistan' },
+    { _id: 'IN', name: 'india' }
+])
+
+// duplicate key
+// MongoBulkWriteError: E11000 duplicate key error collection: eShopping.countries index: _id_ dup key: { _id: "EG" }
+// BulkWriteResult {
+//     insertedCount: 1,
+//     matchedCount: 0,
+//     modifiedCount: 0,
+//     deletedCount: 0,
+//     upsertedCount: 0,
+//     upsertedIds: {},
+//     insertedIds: { '0': 'USA' }
+//   }
+
+db.countries.insertMany([
+    { _id: 'USA', name: 'united states of america' }, // will insert correct
+    { _id: 'EG', name: 'egypt' }, // duplicate key error
+    { _id: 'RU', name: 'rusia' }, // not been inserted because the error will terminate the execution
+])
+
+// configure the default behavoir
+db.countries.insertMany([
+    { _id: 'USA', name: 'united states of america' },
+    { _id: 'EG', name: 'egypt' },
+    { _id: 'RU', name: 'rusia' }
+], { ordered: false })
+
+// Result
+// Result: BulkWriteResult {
+//     insertedCount: 1,
+//     matchedCount: 0,
+//     modifiedCount: 0,
+//     deletedCount: 0,
+//     upsertedCount: 0,
+//     upsertedIds: {},
+//     insertedIds: { '2': 'RU' }
+//   }
+//   Write Errors: [
+//     WriteError {
+//       err: {
+//         index: 0,
+//         code: 11000,
+//         errmsg: 'E11000 duplicate key error collection: eShopping.countries index: _id_ dup key: { _id: "USA" }',
+//         errInfo: undefined,
+//         op: { _id: 'USA', name: 'united states of america' }
+//       }
+//     },
+//     WriteError {
+//       err: {
+//         index: 1,
+//         code: 11000,
+//         errmsg: 'E11000 duplicate key error collection: eShopping.countries index: _id_ dup key: { _id: "EG" }',
+//         errInfo: undefined,
+//         op: { _id: 'EG', name: 'egypt' }
+//       }
+//     }
+//   ]
