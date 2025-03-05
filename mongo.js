@@ -1716,3 +1716,50 @@ db.runCommand({
     }
 })
 
+
+// Validation Level ==> which documents will be validated and when
+// Strict => all inserts and updated will be validated default behavior
+// Moderate => all inserts will be validated but updates will be validated
+// only for documents which is created after the schema was defined
+
+// Validation action (error, warn)
+// error ==> this is default, this is stop the insert and update for invalidated documents
+// warn ==> Proceed the insert or update for invalidated documents and shows warnings to the users in log file
+
+
+db.createCollection('users', {
+    validator: {
+        $jsonSchema: {
+            bsonType: 'object',
+            required: ['name', 'email', 'address'],
+            properties: {
+                _id: { bsonType: 'objectId' },
+                name: {
+                    bsonType: 'string',
+                    description: 'Name is a required text field'
+                },
+                email: {
+                    bsonType: 'string',
+                    description: 'Email is a required text field'
+                },
+                address: {
+                    bsonType: 'object',
+                    description: 'address is a required field',
+                    properties: {
+                        street: { bsonType: 'string' },
+                        city: { bsonType: 'string' },
+                        country: { bsonType: 'string' }
+                    }
+                },
+                gender: {
+                    bsonType: 'string'
+                }
+            },
+            additionalProperties: false
+        }
+    },
+    validationLevel: 'moderate',
+    validationAction: 'error'
+})
+
+db.runCommand({ collMod: 'users', validationLevel: 'strict', validationAction: 'error' })
