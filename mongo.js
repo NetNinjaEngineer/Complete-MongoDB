@@ -1833,3 +1833,818 @@ db.countries.insertMany([
 //       }
 //     }
 //   ]
+
+
+// Reading data from mongo db collection
+// we can read the data using findOne() or find()
+
+// findOne() ===> returns the first document from the collection
+// if there is no criteria provided findOne() will returns the first
+// matching document
+
+//find() ===> returns all documents from the collection if there is no filter criteria provided
+// otherwise it will returns the matched documents
+
+db.products.findOne() // return the first document
+db.products.find() // returns all
+
+// get all products with ratings greater than 4.5
+db.products.find({ ratings: { $gte: 4.5 } })
+
+// get the first matched product
+db.products.findOne({ ratings: { $gte: 4.5 } })
+
+// types of operators
+
+// 1 ==> Query selector
+// is used to get documents based on specific conditions
+// Comparison - Element - Logical - Evaluation - Array - Comments - Geospatial
+
+// 2 ==> Projection
+// is used to specify which fields are include or exclude from the query results
+// $eleMatch - $ - $meta - $slive
+
+
+
+db.products.insertMany([
+    {
+        "name": "iPhone 15 Pro Max",
+        "brand": "Apple",
+        "price": 1299,
+        "category": "Flagship Smartphone",
+        "ratings": 4.8,
+        "battery_capacity": 4422,
+        "processor": "Apple A17 Pro",
+        "ram": 8,
+        "storage_options": ["128GB", "256GB", "512GB", "1TB"],
+        "camera": "48MP",
+        "display_size": 6.7,
+        "details": {
+            "model": "A2993",
+            "color": "Space Black",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Samsung Galaxy S24 Ultra",
+        "brand": "Samsung",
+        "price": 1199,
+        "category": "Flagship Smartphone",
+        "ratings": 4.7,
+        "battery_capacity": 5000,
+        "processor": "Qualcomm Snapdragon 8 Gen 3",
+        "ram": 12,
+        "storage_options": ["256GB", "512GB", "1TB"],
+        "camera": "200MP",
+        "display_size": 6.8,
+        "details": {
+            "model": "SM-S928U",
+            "color": "Titanium Gray",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Google Pixel 9 Pro",
+        "brand": "Google",
+        "price": 999,
+        "category": "Flagship Smartphone",
+        "ratings": 4.6,
+        "battery_capacity": 5000,
+        "processor": "Google Tensor G3",
+        "ram": 12,
+        "storage_options": ["128GB", "256GB", "512GB"],
+        "camera": "50MP",
+        "display_size": 6.7,
+        "details": {
+            "model": "GYZ9P",
+            "color": "Obsidian",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Asus ROG Phone 8",
+        "brand": "Asus",
+        "price": 1099,
+        "category": "Gaming Smartphone",
+        "ratings": 4.6,
+        "battery_capacity": 6000,
+        "processor": "Qualcomm Snapdragon 8 Gen 3",
+        "ram": 16,
+        "storage_options": ["256GB", "512GB"],
+        "camera": "50MP",
+        "display_size": 6.78,
+        "details": {
+            "model": "ZS590KS",
+            "color": "Phantom Black",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Samsung Galaxy Z Fold 5",
+        "brand": "Samsung",
+        "price": 1799,
+        "category": "Foldable Smartphone",
+        "ratings": 4.5,
+        "battery_capacity": 4400,
+        "processor": "Qualcomm Snapdragon 8 Gen 2",
+        "ram": 12,
+        "storage_options": ["256GB", "512GB", "1TB"],
+        "camera": "50MP",
+        "display_size": 7.6,
+        "details": {
+            "model": "SM-F946U",
+            "color": "Cream",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "OnePlus Nord 4",
+        "brand": "OnePlus",
+        "price": 499,
+        "category": "Mid-Range Smartphone",
+        "ratings": 4.3,
+        "battery_capacity": 5000,
+        "processor": "Qualcomm Snapdragon 7 Gen 2",
+        "ram": 8,
+        "storage_options": ["128GB", "256GB"],
+        "camera": "64MP",
+        "display_size": 6.7,
+        "details": {
+            "model": "DN2401",
+            "color": "Mercurial Silver",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Xiaomi Redmi Note 13 Pro",
+        "brand": "Xiaomi",
+        "price": 349,
+        "category": "Budget Smartphone",
+        "ratings": 4.2,
+        "battery_capacity": 5000,
+        "processor": "MediaTek Dimensity 920",
+        "ram": 8,
+        "storage_options": ["128GB", "256GB"],
+        "camera": "108MP",
+        "display_size": 6.67,
+        "details": {
+            "model": "22021211RG",
+            "color": "Graphite Gray",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Sony Xperia 1 V",
+        "brand": "Sony",
+        "price": 1399,
+        "category": "Flagship Smartphone",
+        "ratings": 4.4,
+        "battery_capacity": 5000,
+        "processor": "Qualcomm Snapdragon 8 Gen 2",
+        "ram": 12,
+        "storage_options": ["256GB", "512GB"],
+        "camera": "48MP",
+        "display_size": 6.5,
+        "details": {
+            "model": "XQ-DC72",
+            "color": "Frosted Black",
+            "release_year": 2024
+        }
+    }
+])
+
+
+db.products.find()
+
+// Comparizon operators
+
+// get all products that have ratings equals to 4.4
+db.products.find({ ratings: 4.4 })
+
+// the same thing with $eq operator
+db.products.find({ ratings: { $eq: 4.4 } })
+
+// get the all products which ratings greater than 4.6
+db.products.find({ ratings: { $gt: 4.6 } })
+
+// get the count all products which ratings greater than 4.6
+db.products.find({ ratings: { $gt: 4.6 } }).count()
+
+// get all products which ratings not equal to 4.4
+db.products.find({ ratings: { $ne: 4.4 } })
+
+
+// get all products count which ratings not equal to 4.4
+db.products.find({ ratings: { $ne: 4.4 } }).count() // 7
+
+// get the all products which ratings less than 4.6
+db.products.find({ ratings: { $lt: 4.6 } })
+
+// get the all products count which ratings less than 4.6
+db.products.find({ ratings: { $lt: 4.6 } }).count() // 4
+
+// get the all products which ratings less than or equal 4.6
+db.products.find({ ratings: { $lte: 4.6 } })
+
+// get the all products count which ratings less than or equal 4.6
+db.products.find({ ratings: { $lte: 4.6 } }).count() // 6
+
+// get all products which storage options either 128GB / 256GB
+db.products.find({ storage_options: { $in: ["128GB", "256GB"] } })
+db.products.find({ storage_options: { $in: ["128GB", "256GB"] } }).count()
+
+// get all products which storage options not in either 128GB / 256GB
+db.products.find({ storage_options: { $nin: ["128GB", "256GB"] } })
+db.products.find({ storage_options: { $nin: ["128GB", "256GB"] } }).count()
+
+// Logical operators
+
+db.products.insertMany(
+    [
+        {
+            "name": "Samsung Galaxy S23 Ultra",
+            "brand": "Samsung",
+            "price": 1199,
+            "details": {
+                "model": "SM-S918U",
+                "color": "Phantom Black",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 7.9,
+            "available": true
+        },
+        {
+            "name": "iPhone 14 Pro Max",
+            "brand": "Apple",
+            "price": 1099,
+            "details": {
+                "model": "A2651",
+                "color": "Space Black",
+                "release_year": 2022
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 8.5,
+            "available": true
+        },
+        {
+            "name": "Google Pixel 8 Pro",
+            "brand": "Google",
+            "price": 999,
+            "details": {
+                "model": "GPX8P",
+                "color": "Obsidian",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 8.2,
+            "available": true
+        },
+        {
+            "name": "OnePlus 11",
+            "brand": "OnePlus",
+            "price": 799,
+            "details": {
+                "model": "OP11",
+                "color": "Titan Black",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 7.8,
+            "available": true
+        },
+        {
+            "name": "Samsung Galaxy Z Fold 5",
+            "brand": "Samsung",
+            "price": 1799,
+            "details": {
+                "model": "SM-F946U",
+                "color": "Icy Blue",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 8.0,
+            "available": true
+        },
+        {
+            "name": "iPhone 15",
+            "brand": "Apple",
+            "price": 799,
+            "details": {
+                "model": "A3090",
+                "color": "Pink",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 8.3,
+            "available": true
+        },
+        {
+            "name": "Google Pixel 7a",
+            "brand": "Google",
+            "price": 499,
+            "details": {
+                "model": "GHL1X",
+                "color": "Coral",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 7.5,
+            "available": true
+        },
+        {
+            "name": "Xiaomi 14",
+            "brand": "Xiaomi",
+            "price": 899,
+            "details": {
+                "model": "XM-14",
+                "color": "Jade Green",
+                "release_year": 2024
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 8.1,
+            "available": true
+        },
+        {
+            "name": "Samsung Galaxy A54",
+            "brand": "Samsung",
+            "price": 449,
+            "details": {
+                "model": "SM-A546U",
+                "color": "Awesome Graphite",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 7.2,
+            "available": true
+        },
+        {
+            "name": "iPhone 13 Mini",
+            "brand": "Apple",
+            "price": 599,
+            "details": {
+                "model": "A2628",
+                "color": "Starlight",
+                "release_year": 2021
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 7.9,
+            "available": false
+        },
+        {
+            "name": "Google Pixel 6 Pro",
+            "brand": "Google",
+            "price": 899,
+            "details": {
+                "model": "GLU0G",
+                "color": "Stormy Black",
+                "release_year": 2021
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 7.7,
+            "available": false
+        },
+        {
+            "name": "Oppo Find X6 Pro",
+            "brand": "Oppo",
+            "price": 999,
+            "details": {
+                "model": "OP-FX6P",
+                "color": "Midnight Black",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 8.0,
+            "available": true
+        },
+        {
+            "name": "Samsung Galaxy S22",
+            "brand": "Samsung",
+            "price": 799,
+            "details": {
+                "model": "SM-S901U",
+                "color": "Bora Purple",
+                "release_year": 2022
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 7.6,
+            "available": false
+        },
+        {
+            "name": "iPhone 14 Plus",
+            "brand": "Apple",
+            "price": 899,
+            "details": {
+                "model": "A2886",
+                "color": "Midnight",
+                "release_year": 2022
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 8.1,
+            "available": true
+        },
+        {
+            "name": "Google Pixel 8",
+            "brand": "Google",
+            "price": 699,
+            "details": {
+                "model": "GPX8",
+                "color": "Hazel",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 8.0,
+            "available": true
+        },
+        {
+            "name": "Vivo X90 Pro",
+            "brand": "Vivo",
+            "price": 849,
+            "details": {
+                "model": "V-X90P",
+                "color": "Legendary Black",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 7.9,
+            "available": true
+        },
+        {
+            "name": "Samsung Galaxy Z Flip 5",
+            "brand": "Samsung",
+            "price": 999,
+            "details": {
+                "model": "SM-F731U",
+                "color": "Mint",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 7.8,
+            "available": true
+        },
+        {
+            "name": "iPhone 15 Pro",
+            "brand": "Apple",
+            "price": 999,
+            "details": {
+                "model": "A3102",
+                "color": "Black Titanium",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 8.4,
+            "available": true
+        },
+        {
+            "name": "Google Pixel 7",
+            "brand": "Google",
+            "price": 599,
+            "details": {
+                "model": "GP4BC",
+                "color": "Lemongrass",
+                "release_year": 2022
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 7.6,
+            "available": true
+        },
+        {
+            "name": "Realme GT 3",
+            "brand": "Realme",
+            "price": 649,
+            "details": {
+                "model": "RM-GT3",
+                "color": "Booster Black",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 7.4,
+            "available": true
+        },
+        {
+            "name": "Samsung Galaxy A34",
+            "brand": "Samsung",
+            "price": 349,
+            "details": {
+                "model": "SM-A346U",
+                "color": "Awesome Violet",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 7.0,
+            "available": true
+        },
+        {
+            "name": "iPhone 12",
+            "brand": "Apple",
+            "price": 599,
+            "details": {
+                "model": "A2403",
+                "color": "Blue",
+                "release_year": 2020
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 7.5,
+            "available": false
+        }
+    ]
+)
+
+db.products.find() // 30
+
+// get all products where the ratings is greater than 7 or category is mobile
+// OR operator
+db.products.find({ $or: [{ ratings: { $gt: 7 } }, { category: {$in: ["mobile"]} }]  })
+db.products.find({ $or: [{ ratings: { $gt: 7 } }, { category: {$in: ["mobile"]} }]  }).count() // 22
+
+//NOR operator
+// match any products that does not match any of the specified conditions
+db.products.find({ $nor: [{ ratings: { $gt: 7 } }, { category: {$in: ["mobile"]} }]  })
+db.products.find({ $nor: [{ ratings: { $gt: 7 } }, { category: {$in: ["mobile"]} }]  }).count() // 8
+
+// AND operator
+// get all products with ratings greater than or equal to 7 and price less than or equals to 500
+db.products.find({ $and: [{ ratings: {$gte: 7} }, {price: {$lte: 500}}] })
+db.products.find({ $and: [{ ratings: {$gte: 7} }, {price: {$lte: 500}}] }).count() // 3
+
+// the second filteration  category: "electronics" is override to the first one
+db.products.find({category: "mobile", category: "electronics"})
+
+// get all products with price greater than 50 and category is mobile or laptop
+db.products.find({ $and: [{price: {$gt: 50}}, {$or: [ {category: "mobile"}, {category: "laptop"} ]}]}) // 22
+
+// NOT operator
+db.products.find({price: {$gte: 1000}})
+db.products.find({price: {$gte: 1000}}).count() // 8
+
+db.products.find({ price: { $not: {$gte: 1000} } })
+db.products.find({ price: { $not: {$gte: 1000} } }).count() // 22
+
+// Element operators
+// $exists ==> matches the dpocuments that has or not has specific fields
+db.products.find({ discount: { $exists: true } })
+db.products.find({ discount: { $exists: false } })
+
+// $type ==> matches and returns the documents that have a given fields of specific BJSON type
+db.products.find({ discount: { $type: "string" } })
+db.products.find({ discount: { $type: "number" } })
+
+db.products.find({ available: { $type: "bool" }})
+db.products.find({ available: { $type: "bool" }}).count() // 22
+
+// Evaluation operators
+// $mod ===> make a modulo operation on the value of a field
+// and selects documents with specified result
+
+db.products.find({ price: {$mod: [7,2]}})
+
+// $regex ===> selects the documents from a collection which the value of
+// specified field is matches an expression
+
+db.products.find({ name: {$regex: /Google/} })
+db.products.find({ name: {$regex: /Google/i} }) // case insensitive
+db.products.find({ name: {$regex: /^iphone/} }) // starts with iphone
+db.products.find({ name: {$regex: /max$/i} }) // ends with Max
+
+// $expr ===> allows you to use a complex expressions within your query conditions
+// get all products that the subtract between price and discount is greater than 100
+db.products.find({$expr: {
+    $gt: [ {$subtract: ["$price", "$discount"]}, 100 ]
+}})
+
+// Array operators
+db.employees.insertMany([
+    {
+        "name": "Alice Smith",
+        "age": 28,
+        "skills": [
+            {
+                "name": "programmer",
+                "level": 8
+            },
+            {
+                "name": "writer",
+                "level": 5
+            }
+        ],
+        "hobbies": [
+            "reading",
+            "hiking"
+        ]
+    },
+    {
+        "name": "Bob Johnson",
+        "age": 35,
+        "skills": [
+            {
+                "name": "engineer",
+                "level": 7
+            },
+            {
+                "name": "project manager",
+                "level": 6
+            }
+        ],
+        "hobbies": [
+            "cycling",
+            "photography"
+        ]
+    },
+    {
+        "name": "Clara Nguyen",
+        "age": 42,
+        "skills": [
+            {
+                "name": "data scientist",
+                "level": 9
+            },
+            {
+                "name": "analyst",
+                "level": 7
+            }
+        ],
+        "hobbies": [
+            "painting",
+            "yoga"
+        ]
+    },
+    {
+        "name": "David Kim",
+        "age": 19,
+        "skills": [
+            {
+                "name": "gamer",
+                "level": 6
+            },
+            {
+                "name": "graphic designer",
+                "level": 4
+            }
+        ],
+        "hobbies": [
+            "gaming",
+            "skateboarding"
+        ]
+    },
+    {
+        "name": "Emma Brown",
+        "age": 31,
+        "skills": [
+            {
+                "name": "teacher",
+                "level": 8
+            },
+            {
+                "name": "public speaker",
+                "level": 6
+            }
+        ],
+        "hobbies": [
+            "gardening",
+            "cooking"
+        ]
+    },
+    {
+        "name": "Frank Lopez",
+        "age": 27,
+        "skills": [
+            {
+                "name": "musician",
+                "level": 7
+            },
+            {
+                "name": "producer",
+                "level": 5
+            }
+        ],
+        "hobbies": [
+            "traveling",
+            "music"
+        ]
+    },
+    {
+        "name": "Grace Patel",
+        "age": 39,
+        "skills": [
+            {
+                "name": "doctor",
+                "level": 9
+            },
+            {
+                "name": "researcher",
+                "level": 8
+            }
+        ],
+        "hobbies": [
+            "reading",
+            "swimming"
+        ]
+    },
+    {
+        "name": "Henry Davis",
+        "age": 45,
+        "skills": [
+            {
+                "name": "chef",
+                "level": 8
+            },
+            {
+                "name": "food critic",
+                "level": 6
+            }
+        ],
+        "hobbies": [
+            "cooking",
+            "wine tasting"
+        ]
+    },
+    {
+        "name": "Isabella Martinez",
+        "age": 23,
+        "skills": [
+            {
+                "name": "dancer",
+                "level": 7
+            },
+            {
+                "name": "choreographer",
+                "level": 5
+            }
+        ],
+        "hobbies": [
+            "dancing",
+            "photography"
+        ]
+    },
+    {
+        "name": "James Wilson",
+        "age": 50,
+        "skills": [
+            {
+                "name": "architect",
+                "level": 9
+            },
+            {
+                "name": "designer",
+                "level": 7
+            }
+        ],
+        "hobbies": [
+            "hiking",
+            "drawing"
+        ]
+    }
+])
+
+// get all employees that has a skill gamer
+db.employees.find({ "skills.name": "gamer" })
+
+db.employees.updateOne({ name: 'Alice Smith'}, { $set: {hobbies:  [ 'reading', 'hiking', "music" ]} })
+// get the all employees with the size of hobbies array is 3
+db.employees.find({hobbies: {$size: 3}})
+
+db.employees.find({ hobbies: ["reading","swimming"]})
+db.employees.insertOne({
+    "name": "Mohamed Ehab",
+    "age": 39,
+    "skills": [
+      {
+        "name": "doctor",
+        "level": 9
+      },
+      {
+        "name": "researcher",
+        "level": 8
+      }
+    ],
+    "hobbies": ["reading", "swimming"]
+  })
+
+// $elemMatch ==> operator
+// get all employees with hobbies swimming and reading
+db.employees.find({hobbies: {$all: ["reading", "swimming"]}})
+db.employees.find({
+    $and: [{"skills.name": "designer"}, {"skills.level": {$gt: 2}}]
+})
+// the same thing using $elemMatch
+db.employees.find({skills: {$elemMatch: {name: 'designer', level: {$gt: 2}}}})
+
+// Sorting a cursor and pagination
+// We can use sort() method on a cursor methods [findOne, find] to sort the results
+// in ascending order or descending order 
+// we need to specify the field
+// ascending sort ==> 1
+// descending sort ==> -1
+
+// sort the products in ascending order by name
+db.products.find().sort({name: 1})
+
+// sort the products in descending order by name
+db.products.find().sort({name: -1})
+
+// sort the products in descending order by name and desending by ratings
+db.products.find().sort({name: 1, ratings: -1})
+
+// Implementing pagination using skip and limit methods
+db.products.find().skip(20).limit(10)
+db.products.find().sort({name: 1}).skip(20).limit(10)
