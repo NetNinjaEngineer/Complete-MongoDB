@@ -2648,3 +2648,39 @@ db.products.find().sort({name: 1, ratings: -1})
 // Implementing pagination using skip and limit methods
 db.products.find().skip(20).limit(10)
 db.products.find().sort({name: 1}).skip(20).limit(10)
+
+// Projection operators
+db.products.find({}, {name: 1, price: 1, ratings: 1})
+
+// exclude the _id explicitly
+db.products.find({}, {name: 1, price: 1, ratings: 1, _id: 0})
+
+db.products.find({}, {_id: 0, name: true, price: true, ratings: 1, "details.model": 1, "details.color": 1})
+
+db.employees.find({}, {name: 1, "skills.name": 1})
+
+// $ ==> is used to select a specific element from an array
+// used to select only one single element from an array field based on certain conditions
+db.products.find({category: "mobile"}, {_id: 0, name: 1, price: 1, category: 1})
+
+// only selects the mobile category in the array
+db.products.find({category: "mobile"}, {_id: 0, name: 1, price: 1, "category.$": 1})
+// example ===>  { name: 'Samsung Galaxy A54', price: 449, category: [ 'mobile' ] }
+
+db.products.find({category: 'electronics'}, {
+    name: 1,
+    price: 1,
+    ratings: 1,
+    _id: 0,
+    category: {$elemMatch: {$eq: "mobile"}}
+})
+
+// $slice ===> used to select a specific range of elements from an array
+// used to limit number of elements returned from the array
+
+//only show first two elements from the category array in the result set
+db.products.find({ratings: {$gte: 8}}, {_id: 0, name: 1, category: {$slice: 2}})
+db.products.find({ratings: {$gte: 8}}, {_id: 0, name: 1, category: {$slice: 1}})
+
+// show elements from index 1 and takes three elements from the category
+db.products.find({ratings: {$gte: 8}}, {_id: 0, name: 1, category: {$slice: [1,3] }})
