@@ -1833,3 +1833,37 @@ db.countries.insertMany([
 //       }
 //     }
 //   ]
+
+
+// Reading data from mongo db collection
+// we can read the data using findOne() or find()
+
+// findOne() ===> returns the first document from the collection
+// if there is no criteria provided findOne() will returns the first
+// matching document
+
+//find() ===> returns all documents from the collection if there is no filter criteria provided
+// otherwise it will returns the matched documents
+
+db.products.findOne() // return the first document
+db.products.find() // returns all
+
+// get all products with ratings greater than 4.5
+db.products.find({ ratings: { $gte: 4.5 } })
+
+// get the first matched product
+db.products.findOne({ ratings: { $gte: 4.5 } })
+
+// types of operators
+
+// 1 ==> Query selector
+// is used to get documents based on specific conditions
+// Comparison - Element - Logical - Evaluation - Array - Comments - Geospatial
+
+// 2 ==> Projection
+// is used to specify which fields are include or exclude from the query results
+// $eleMatch - $ - $meta - $slive
+
+
+
+
