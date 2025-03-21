@@ -2380,7 +2380,17 @@ db.products.find({price: {$gte: 1000}}).count() // 8
 db.products.find({ price: { $not: {$gte: 1000} } })
 db.products.find({ price: { $not: {$gte: 1000} } }).count() // 22
 
+// Element operators
+// $exists ==> matches the dpocuments that has or not has specific fields
+db.products.find({ discount: { $exists: true } })
+db.products.find({ discount: { $exists: false } })
 
+// $type ==> matches and returns the documents that have a given fields of specific BJSON type
+db.products.find({ discount: { $type: "string" } })
+db.products.find({ discount: { $type: "number" } })
+
+db.products.find({ available: { $type: "bool" }})
+db.products.find({ available: { $type: "bool" }}).count() // 22
 
 
 
