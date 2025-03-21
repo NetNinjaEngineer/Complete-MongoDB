@@ -1866,4 +1866,196 @@ db.products.findOne({ ratings: { $gte: 4.5 } })
 
 
 
+db.products.insertMany([
+    {
+        "name": "iPhone 15 Pro Max",
+        "brand": "Apple",
+        "price": 1299,
+        "category": "Flagship Smartphone",
+        "ratings": 4.8,
+        "battery_capacity": 4422,
+        "processor": "Apple A17 Pro",
+        "ram": 8,
+        "storage_options": ["128GB", "256GB", "512GB", "1TB"],
+        "camera": "48MP",
+        "display_size": 6.7,
+        "details": {
+            "model": "A2993",
+            "color": "Space Black",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "Samsung Galaxy S24 Ultra",
+        "brand": "Samsung",
+        "price": 1199,
+        "category": "Flagship Smartphone",
+        "ratings": 4.7,
+        "battery_capacity": 5000,
+        "processor": "Qualcomm Snapdragon 8 Gen 3",
+        "ram": 12,
+        "storage_options": ["256GB", "512GB", "1TB"],
+        "camera": "200MP",
+        "display_size": 6.8,
+        "details": {
+            "model": "SM-S928U",
+            "color": "Titanium Gray",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Google Pixel 9 Pro",
+        "brand": "Google",
+        "price": 999,
+        "category": "Flagship Smartphone",
+        "ratings": 4.6,
+        "battery_capacity": 5000,
+        "processor": "Google Tensor G3",
+        "ram": 12,
+        "storage_options": ["128GB", "256GB", "512GB"],
+        "camera": "50MP",
+        "display_size": 6.7,
+        "details": {
+            "model": "GYZ9P",
+            "color": "Obsidian",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Asus ROG Phone 8",
+        "brand": "Asus",
+        "price": 1099,
+        "category": "Gaming Smartphone",
+        "ratings": 4.6,
+        "battery_capacity": 6000,
+        "processor": "Qualcomm Snapdragon 8 Gen 3",
+        "ram": 16,
+        "storage_options": ["256GB", "512GB"],
+        "camera": "50MP",
+        "display_size": 6.78,
+        "details": {
+            "model": "ZS590KS",
+            "color": "Phantom Black",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Samsung Galaxy Z Fold 5",
+        "brand": "Samsung",
+        "price": 1799,
+        "category": "Foldable Smartphone",
+        "ratings": 4.5,
+        "battery_capacity": 4400,
+        "processor": "Qualcomm Snapdragon 8 Gen 2",
+        "ram": 12,
+        "storage_options": ["256GB", "512GB", "1TB"],
+        "camera": "50MP",
+        "display_size": 7.6,
+        "details": {
+            "model": "SM-F946U",
+            "color": "Cream",
+            "release_year": 2023
+        }
+    },
+    {
+        "name": "OnePlus Nord 4",
+        "brand": "OnePlus",
+        "price": 499,
+        "category": "Mid-Range Smartphone",
+        "ratings": 4.3,
+        "battery_capacity": 5000,
+        "processor": "Qualcomm Snapdragon 7 Gen 2",
+        "ram": 8,
+        "storage_options": ["128GB", "256GB"],
+        "camera": "64MP",
+        "display_size": 6.7,
+        "details": {
+            "model": "DN2401",
+            "color": "Mercurial Silver",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Xiaomi Redmi Note 13 Pro",
+        "brand": "Xiaomi",
+        "price": 349,
+        "category": "Budget Smartphone",
+        "ratings": 4.2,
+        "battery_capacity": 5000,
+        "processor": "MediaTek Dimensity 920",
+        "ram": 8,
+        "storage_options": ["128GB", "256GB"],
+        "camera": "108MP",
+        "display_size": 6.67,
+        "details": {
+            "model": "22021211RG",
+            "color": "Graphite Gray",
+            "release_year": 2024
+        }
+    },
+    {
+        "name": "Sony Xperia 1 V",
+        "brand": "Sony",
+        "price": 1399,
+        "category": "Flagship Smartphone",
+        "ratings": 4.4,
+        "battery_capacity": 5000,
+        "processor": "Qualcomm Snapdragon 8 Gen 2",
+        "ram": 12,
+        "storage_options": ["256GB", "512GB"],
+        "camera": "48MP",
+        "display_size": 6.5,
+        "details": {
+            "model": "XQ-DC72",
+            "color": "Frosted Black",
+            "release_year": 2024
+        }
+    }
+])
+
+
+db.products.find()
+
+// Comparizon operators
+
+// get all products that have ratings equals to 4.4
+db.products.find({ ratings: 4.4 })
+
+// the same thing with $eq operator
+db.products.find({ ratings: {$eq: 4.4} })
+
+// get the all products which ratings greater than 4.6
+db.products.find({ ratings: { $gt: 4.6 }})
+
+// get the count all products which ratings greater than 4.6
+db.products.find({ ratings: { $gt: 4.6 }}).count()
+
+// get all products which ratings not equal to 4.4
+db.products.find({ ratings: { $ne: 4.4 }})
+
+
+// get all products count which ratings not equal to 4.4
+db.products.find({ ratings: { $ne: 4.4 }}).count() // 7
+
+// get the all products which ratings less than 4.6
+db.products.find({ ratings: { $lt: 4.6 }})
+
+// get the all products count which ratings less than 4.6
+db.products.find({ ratings: { $lt: 4.6 }}).count() // 4
+
+// get the all products which ratings less than or equal 4.6
+db.products.find({ ratings: { $lte: 4.6 }})
+
+// get the all products count which ratings less than or equal 4.6
+db.products.find({ ratings: { $lte: 4.6 }}).count() // 6
+
+// get all products which storage options either 128GB / 256GB
+db.products.find({ storage_options: { $in: ["128GB", "256GB"] } })
+db.products.find({ storage_options: { $in: ["128GB", "256GB"] } }).count()
+
+// get all products which storage options not in either 128GB / 256GB
+db.products.find({ storage_options: { $nin: ["128GB", "256GB"] } })
+db.products.find({ storage_options: { $nin: ["128GB", "256GB"] } }).count()
+
+
 
