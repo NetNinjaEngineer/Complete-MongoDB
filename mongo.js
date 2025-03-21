@@ -2022,32 +2022,32 @@ db.products.find()
 db.products.find({ ratings: 4.4 })
 
 // the same thing with $eq operator
-db.products.find({ ratings: {$eq: 4.4} })
+db.products.find({ ratings: { $eq: 4.4 } })
 
 // get the all products which ratings greater than 4.6
-db.products.find({ ratings: { $gt: 4.6 }})
+db.products.find({ ratings: { $gt: 4.6 } })
 
 // get the count all products which ratings greater than 4.6
-db.products.find({ ratings: { $gt: 4.6 }}).count()
+db.products.find({ ratings: { $gt: 4.6 } }).count()
 
 // get all products which ratings not equal to 4.4
-db.products.find({ ratings: { $ne: 4.4 }})
+db.products.find({ ratings: { $ne: 4.4 } })
 
 
 // get all products count which ratings not equal to 4.4
-db.products.find({ ratings: { $ne: 4.4 }}).count() // 7
+db.products.find({ ratings: { $ne: 4.4 } }).count() // 7
 
 // get the all products which ratings less than 4.6
-db.products.find({ ratings: { $lt: 4.6 }})
+db.products.find({ ratings: { $lt: 4.6 } })
 
 // get the all products count which ratings less than 4.6
-db.products.find({ ratings: { $lt: 4.6 }}).count() // 4
+db.products.find({ ratings: { $lt: 4.6 } }).count() // 4
 
 // get the all products which ratings less than or equal 4.6
-db.products.find({ ratings: { $lte: 4.6 }})
+db.products.find({ ratings: { $lte: 4.6 } })
 
 // get the all products count which ratings less than or equal 4.6
-db.products.find({ ratings: { $lte: 4.6 }}).count() // 6
+db.products.find({ ratings: { $lte: 4.6 } }).count() // 6
 
 // get all products which storage options either 128GB / 256GB
 db.products.find({ storage_options: { $in: ["128GB", "256GB"] } })
@@ -2056,6 +2056,331 @@ db.products.find({ storage_options: { $in: ["128GB", "256GB"] } }).count()
 // get all products which storage options not in either 128GB / 256GB
 db.products.find({ storage_options: { $nin: ["128GB", "256GB"] } })
 db.products.find({ storage_options: { $nin: ["128GB", "256GB"] } }).count()
+
+// Logical operators
+
+db.products.insertMany(
+    [
+        {
+            "name": "Samsung Galaxy S23 Ultra",
+            "brand": "Samsung",
+            "price": 1199,
+            "details": {
+                "model": "SM-S918U",
+                "color": "Phantom Black",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 7.9,
+            "available": true
+        },
+        {
+            "name": "iPhone 14 Pro Max",
+            "brand": "Apple",
+            "price": 1099,
+            "details": {
+                "model": "A2651",
+                "color": "Space Black",
+                "release_year": 2022
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 8.5,
+            "available": true
+        },
+        {
+            "name": "Google Pixel 8 Pro",
+            "brand": "Google",
+            "price": 999,
+            "details": {
+                "model": "GPX8P",
+                "color": "Obsidian",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 8.2,
+            "available": true
+        },
+        {
+            "name": "OnePlus 11",
+            "brand": "OnePlus",
+            "price": 799,
+            "details": {
+                "model": "OP11",
+                "color": "Titan Black",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 7.8,
+            "available": true
+        },
+        {
+            "name": "Samsung Galaxy Z Fold 5",
+            "brand": "Samsung",
+            "price": 1799,
+            "details": {
+                "model": "SM-F946U",
+                "color": "Icy Blue",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 8.0,
+            "available": true
+        },
+        {
+            "name": "iPhone 15",
+            "brand": "Apple",
+            "price": 799,
+            "details": {
+                "model": "A3090",
+                "color": "Pink",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 8.3,
+            "available": true
+        },
+        {
+            "name": "Google Pixel 7a",
+            "brand": "Google",
+            "price": 499,
+            "details": {
+                "model": "GHL1X",
+                "color": "Coral",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 7.5,
+            "available": true
+        },
+        {
+            "name": "Xiaomi 14",
+            "brand": "Xiaomi",
+            "price": 899,
+            "details": {
+                "model": "XM-14",
+                "color": "Jade Green",
+                "release_year": 2024
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 8.1,
+            "available": true
+        },
+        {
+            "name": "Samsung Galaxy A54",
+            "brand": "Samsung",
+            "price": 449,
+            "details": {
+                "model": "SM-A546U",
+                "color": "Awesome Graphite",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 7.2,
+            "available": true
+        },
+        {
+            "name": "iPhone 13 Mini",
+            "brand": "Apple",
+            "price": 599,
+            "details": {
+                "model": "A2628",
+                "color": "Starlight",
+                "release_year": 2021
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 7.9,
+            "available": false
+        },
+        {
+            "name": "Google Pixel 6 Pro",
+            "brand": "Google",
+            "price": 899,
+            "details": {
+                "model": "GLU0G",
+                "color": "Stormy Black",
+                "release_year": 2021
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 7.7,
+            "available": false
+        },
+        {
+            "name": "Oppo Find X6 Pro",
+            "brand": "Oppo",
+            "price": 999,
+            "details": {
+                "model": "OP-FX6P",
+                "color": "Midnight Black",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 8.0,
+            "available": true
+        },
+        {
+            "name": "Samsung Galaxy S22",
+            "brand": "Samsung",
+            "price": 799,
+            "details": {
+                "model": "SM-S901U",
+                "color": "Bora Purple",
+                "release_year": 2022
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 7.6,
+            "available": false
+        },
+        {
+            "name": "iPhone 14 Plus",
+            "brand": "Apple",
+            "price": 899,
+            "details": {
+                "model": "A2886",
+                "color": "Midnight",
+                "release_year": 2022
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 8.1,
+            "available": true
+        },
+        {
+            "name": "Google Pixel 8",
+            "brand": "Google",
+            "price": 699,
+            "details": {
+                "model": "GPX8",
+                "color": "Hazel",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 8.0,
+            "available": true
+        },
+        {
+            "name": "Vivo X90 Pro",
+            "brand": "Vivo",
+            "price": 849,
+            "details": {
+                "model": "V-X90P",
+                "color": "Legendary Black",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 7.9,
+            "available": true
+        },
+        {
+            "name": "Samsung Galaxy Z Flip 5",
+            "brand": "Samsung",
+            "price": 999,
+            "details": {
+                "model": "SM-F731U",
+                "color": "Mint",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 7.8,
+            "available": true
+        },
+        {
+            "name": "iPhone 15 Pro",
+            "brand": "Apple",
+            "price": 999,
+            "details": {
+                "model": "A3102",
+                "color": "Black Titanium",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 8.4,
+            "available": true
+        },
+        {
+            "name": "Google Pixel 7",
+            "brand": "Google",
+            "price": 599,
+            "details": {
+                "model": "GP4BC",
+                "color": "Lemongrass",
+                "release_year": 2022
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 7.6,
+            "available": true
+        },
+        {
+            "name": "Realme GT 3",
+            "brand": "Realme",
+            "price": 649,
+            "details": {
+                "model": "RM-GT3",
+                "color": "Booster Black",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 7.4,
+            "available": true
+        },
+        {
+            "name": "Samsung Galaxy A34",
+            "brand": "Samsung",
+            "price": 349,
+            "details": {
+                "model": "SM-A346U",
+                "color": "Awesome Violet",
+                "release_year": 2023
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 7.0,
+            "available": true
+        },
+        {
+            "name": "iPhone 12",
+            "brand": "Apple",
+            "price": 599,
+            "details": {
+                "model": "A2403",
+                "color": "Blue",
+                "release_year": 2020
+            },
+            "category": ["electronics", "mobile"],
+            "ratings": 7.5,
+            "available": false
+        }
+    ]
+)
+
+db.products.find() // 30
+
+// get all products where the ratings is greater than 7 or category is mobile
+// OR operator
+db.products.find({ $or: [{ ratings: { $gt: 7 } }, { category: {$in: ["mobile"]} }]  })
+db.products.find({ $or: [{ ratings: { $gt: 7 } }, { category: {$in: ["mobile"]} }]  }).count() // 22
+
+//NOR operator
+// match any products that does not match any of the specified conditions
+db.products.find({ $nor: [{ ratings: { $gt: 7 } }, { category: {$in: ["mobile"]} }]  })
+db.products.find({ $nor: [{ ratings: { $gt: 7 } }, { category: {$in: ["mobile"]} }]  }).count() // 8
+
+// AND operator
+// get all products with ratings greater than or equal to 7 and price less than or equals to 500
+db.products.find({ $and: [{ ratings: {$gte: 7} }, {price: {$lte: 500}}] })
+db.products.find({ $and: [{ ratings: {$gte: 7} }, {price: {$lte: 500}}] }).count() // 3
+
+// the second filteration  category: "electronics" is override to the first one
+db.products.find({category: "mobile", category: "electronics"})
+
+// get all products with price greater than 50 and category is mobile or laptop
+db.products.find({ $and: [{price: {$gt: 50}}, {$or: [ {category: "mobile"}, {category: "laptop"} ]}]}) // 22
+
+// NOT operator
+db.products.find({price: {$gte: 1000}})
+db.products.find({price: {$gte: 1000}}).count() // 8
+
+db.products.find({ price: { $not: {$gte: 1000} } })
+db.products.find({ price: { $not: {$gte: 1000} } }).count() // 22
+
+
 
 
 
