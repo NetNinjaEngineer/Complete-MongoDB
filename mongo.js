@@ -2628,3 +2628,23 @@ db.employees.find({
 })
 // the same thing using $elemMatch
 db.employees.find({skills: {$elemMatch: {name: 'designer', level: {$gt: 2}}}})
+
+// Sorting a cursor and pagination
+// We can use sort() method on a cursor methods [findOne, find] to sort the results
+// in ascending order or descending order 
+// we need to specify the field
+// ascending sort ==> 1
+// descending sort ==> -1
+
+// sort the products in ascending order by name
+db.products.find().sort({name: 1})
+
+// sort the products in descending order by name
+db.products.find().sort({name: -1})
+
+// sort the products in descending order by name and desending by ratings
+db.products.find().sort({name: 1, ratings: -1})
+
+// Implementing pagination using skip and limit methods
+db.products.find().skip(20).limit(10)
+db.products.find().sort({name: 1}).skip(20).limit(10)
