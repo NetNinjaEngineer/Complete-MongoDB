@@ -2392,5 +2392,22 @@ db.products.find({ discount: { $type: "number" } })
 db.products.find({ available: { $type: "bool" }})
 db.products.find({ available: { $type: "bool" }}).count() // 22
 
+// Evaluation operators
+// $mod ===> make a modulo operation on the value of a field
+// and selects documents with specified result
 
+db.products.find({ price: {$mod: [7,2]}})
 
+// $regex ===> selects the documents from a collection which the value of
+// specified field is matches an expression
+
+db.products.find({ name: {$regex: /Google/} })
+db.products.find({ name: {$regex: /Google/i} }) // case insensitive
+db.products.find({ name: {$regex: /^iphone/} }) // starts with iphone
+db.products.find({ name: {$regex: /max$/i} }) // ends with Max
+
+// $expr ===> allows you to use a complex expressions within your query conditions
+// get all products that the subtract between price and discount is greater than 100
+db.products.find({$expr: {
+    $gt: [ {$subtract: ["$price", "$discount"]}, 100 ]
+}})
