@@ -2411,3 +2411,220 @@ db.products.find({ name: {$regex: /max$/i} }) // ends with Max
 db.products.find({$expr: {
     $gt: [ {$subtract: ["$price", "$discount"]}, 100 ]
 }})
+
+// Array operators
+db.employees.insertMany([
+    {
+        "name": "Alice Smith",
+        "age": 28,
+        "skills": [
+            {
+                "name": "programmer",
+                "level": 8
+            },
+            {
+                "name": "writer",
+                "level": 5
+            }
+        ],
+        "hobbies": [
+            "reading",
+            "hiking"
+        ]
+    },
+    {
+        "name": "Bob Johnson",
+        "age": 35,
+        "skills": [
+            {
+                "name": "engineer",
+                "level": 7
+            },
+            {
+                "name": "project manager",
+                "level": 6
+            }
+        ],
+        "hobbies": [
+            "cycling",
+            "photography"
+        ]
+    },
+    {
+        "name": "Clara Nguyen",
+        "age": 42,
+        "skills": [
+            {
+                "name": "data scientist",
+                "level": 9
+            },
+            {
+                "name": "analyst",
+                "level": 7
+            }
+        ],
+        "hobbies": [
+            "painting",
+            "yoga"
+        ]
+    },
+    {
+        "name": "David Kim",
+        "age": 19,
+        "skills": [
+            {
+                "name": "gamer",
+                "level": 6
+            },
+            {
+                "name": "graphic designer",
+                "level": 4
+            }
+        ],
+        "hobbies": [
+            "gaming",
+            "skateboarding"
+        ]
+    },
+    {
+        "name": "Emma Brown",
+        "age": 31,
+        "skills": [
+            {
+                "name": "teacher",
+                "level": 8
+            },
+            {
+                "name": "public speaker",
+                "level": 6
+            }
+        ],
+        "hobbies": [
+            "gardening",
+            "cooking"
+        ]
+    },
+    {
+        "name": "Frank Lopez",
+        "age": 27,
+        "skills": [
+            {
+                "name": "musician",
+                "level": 7
+            },
+            {
+                "name": "producer",
+                "level": 5
+            }
+        ],
+        "hobbies": [
+            "traveling",
+            "music"
+        ]
+    },
+    {
+        "name": "Grace Patel",
+        "age": 39,
+        "skills": [
+            {
+                "name": "doctor",
+                "level": 9
+            },
+            {
+                "name": "researcher",
+                "level": 8
+            }
+        ],
+        "hobbies": [
+            "reading",
+            "swimming"
+        ]
+    },
+    {
+        "name": "Henry Davis",
+        "age": 45,
+        "skills": [
+            {
+                "name": "chef",
+                "level": 8
+            },
+            {
+                "name": "food critic",
+                "level": 6
+            }
+        ],
+        "hobbies": [
+            "cooking",
+            "wine tasting"
+        ]
+    },
+    {
+        "name": "Isabella Martinez",
+        "age": 23,
+        "skills": [
+            {
+                "name": "dancer",
+                "level": 7
+            },
+            {
+                "name": "choreographer",
+                "level": 5
+            }
+        ],
+        "hobbies": [
+            "dancing",
+            "photography"
+        ]
+    },
+    {
+        "name": "James Wilson",
+        "age": 50,
+        "skills": [
+            {
+                "name": "architect",
+                "level": 9
+            },
+            {
+                "name": "designer",
+                "level": 7
+            }
+        ],
+        "hobbies": [
+            "hiking",
+            "drawing"
+        ]
+    }
+])
+
+// get all employees that has a skill gamer
+db.employees.find({ "skills.name": "gamer" })
+
+db.employees.updateOne({ name: 'Alice Smith'}, { $set: {hobbies:  [ 'reading', 'hiking', "music" ]} })
+// get the all employees with the size of hobbies array is 3
+db.employees.find({hobbies: {$size: 3}})
+
+db.employees.find({ hobbies: ["reading","swimming"]})
+db.employees.insertOne({
+    "name": "Mohamed Ehab",
+    "age": 39,
+    "skills": [
+      {
+        "name": "doctor",
+        "level": 9
+      },
+      {
+        "name": "researcher",
+        "level": 8
+      }
+    ],
+    "hobbies": ["reading", "swimming"]
+  })
+
+// $elemMatch ==> operator
+// get all employees with hobbies swimming and reading
+db.employees.find({hobbies: {$all: ["reading", "swimming"]}})
+db.employees.find({
+    $and: [{"skills.name": "designer"}, {"skills.level": {$gt: 2}}]
+})
+// the same thing using $elemMatch
+db.employees.find({skills: {$elemMatch: {name: 'designer', level: {$gt: 2}}}})

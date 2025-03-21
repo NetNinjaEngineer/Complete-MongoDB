@@ -1,0 +1,167 @@
+[
+  {
+    "name": "Alice Smith",
+    "age": 28,
+    "skills": [
+      {
+        "name": "programmer",
+        "level": 8
+      },
+      {
+        "name": "writer",
+        "level": 5
+      }
+    ],
+    "hobbies": ["reading", "hiking"]
+  },
+  {
+    "name": "Bob Johnson",
+    "age": 35,
+    "skills": [
+      {
+        "name": "engineer",
+        "level": 7
+      },
+      {
+        "name": "project manager",
+        "level": 6
+      }
+    ],
+    "hobbies": ["cycling", "photography"]
+  },
+  {
+    "name": "Clara Nguyen",
+    "age": 42,
+    "skills": [
+      {
+        "name": "data scientist",
+        "level": 9
+      },
+      {
+        "name": "analyst",
+        "level": 7
+      }
+    ],
+    "hobbies": ["painting", "yoga"]
+  },
+  {
+    "name": "David Kim",
+    "age": 19,
+    "skills": [
+      {
+        "name": "gamer",
+        "level": 6
+      },
+      {
+        "name": "graphic designer",
+        "level": 4
+      }
+    ],
+    "hobbies": ["gaming", "skateboarding"]
+  },
+  {
+    "name": "Emma Brown",
+    "age": 31,
+    "skills": [
+      {
+        "name": "teacher",
+        "level": 8
+      },
+      {
+        "name": "public speaker",
+        "level": 6
+      }
+    ],
+    "hobbies": ["gardening", "cooking"]
+  },
+  {
+    "name": "Frank Lopez",
+    "age": 27,
+    "skills": [
+      {
+        "name": "musician",
+        "level": 7
+      },
+      {
+        "name": "producer",
+        "level": 5
+      }
+    ],
+    "hobbies": ["traveling", "music"]
+  },
+  {
+    "name": "Grace Patel",
+    "age": 39,
+    "skills": [
+      {
+        "name": "doctor",
+        "level": 9
+      },
+      {
+        "name": "researcher",
+        "level": 8
+      }
+    ],
+    "hobbies": ["reading", "swimming"]
+  },
+  {
+    "name": "Mohamed Ehab",
+    "age": 39,
+    "skills": [
+      {
+        "name": "doctor",
+        "level": 9
+      },
+      {
+        "name": "researcher",
+        "level": 8
+      }
+    ],
+    "hobbies": ["reading", "swimming"]
+  },
+  {
+    "name": "Henry Davis",
+    "age": 45,
+    "skills": [
+      {
+        "name": "chef",
+        "level": 8
+      },
+      {
+        "name": "food critic",
+        "level": 6
+      }
+    ],
+    "hobbies": ["cooking", "wine tasting"]
+  },
+  {
+    "name": "Isabella Martinez",
+    "age": 23,
+    "skills": [
+      {
+        "name": "dancer",
+        "level": 7
+      },
+      {
+        "name": "choreographer",
+        "level": 5
+      }
+    ],
+    "hobbies": ["dancing", "photography"]
+  },
+  {
+    "name": "James Wilson",
+    "age": 50,
+    "skills": [
+      {
+        "name": "architect",
+        "level": 9
+      },
+      {
+        "name": "designer",
+        "level": 7
+      }
+    ],
+    "hobbies": ["hiking", "drawing"]
+  }
+]
