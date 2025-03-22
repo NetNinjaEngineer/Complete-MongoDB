@@ -2954,4 +2954,32 @@ db.getCollection("employees").updateMany(
 );
 
 
+// Increment Operator $inc
+// increments or decrements the numeric value of a field by specified value
+// when assign a positive value ====> increment
+// when assign a negative value ====> decrement
+
+
+// update employee age by incrementing it by 2
+// INCREMENT
+db.employees.updateOne({ "skills.name": "developer" }, { $inc: { age: 2 } })
+
+// DECREMENT
+db.employees.updateOne({ "skills.name": "developer" }, { $inc: { age: -2 } })
+
+db.getCollection("products").findOne({ _id: ObjectId('67dd1d440a833116164d7986') })
+db.getCollection("products").updateOne({ _id: ObjectId('67dd1d440a833116164d7986') }, { $inc: { price: 100 } })
+db.getCollection("products").updateOne({ _id: ObjectId('67dd1d440a833116164d7986') }, { $inc: { price: -100 } })
+
+// ERROR
+// MongoServerError: Updating the path 'price' would create a conflict at 'price'
+db.getCollection("products").updateOne(
+  { _id: ObjectId('67dd1d440a833116164d7986') },
+  { $inc: { price: -100 }, $set: {price: 1000} })
+
+
+
+
+
+
 
