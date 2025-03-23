@@ -2975,7 +2975,20 @@ db.getCollection("products").updateOne({ _id: ObjectId('67dd1d440a833116164d7986
 // MongoServerError: Updating the path 'price' would create a conflict at 'price'
 db.getCollection("products").updateOne(
   { _id: ObjectId('67dd1d440a833116164d7986') },
-  { $inc: { price: -100 }, $set: {price: 1000} })
+  { $inc: { price: -100 }, $set: { price: 1000 } })
+
+// Min Operator
+// $min ==> sets a value for a specified field if the specified value
+// is less than the existing field value otherwise the update is not happened
+db.getCollection("employees").find({ "skills.name": "developer" }) // 22
+db.getCollection("employees").updateOne({ "skills.name": "developer" }, { $min: { age: 10 } })
+
+// Max Operator
+// $min ==> sets a value for a specified field if the specified value
+// is greater than the existing field value otherwise the updatei s not happened
+db.getCollection("employees").updateOne({ "skills.name": "developer" }, { $max: { age: 22 } })
+
+
 
 
 
